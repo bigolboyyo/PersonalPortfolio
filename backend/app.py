@@ -8,7 +8,7 @@ def contact():
         name = request.form['name']
         email = request.form['email']
         message = request.form['message']
-
+        #TESTING
         # Insert your email handling code here
         # ...
         return 'Thank you for contacting me!'
