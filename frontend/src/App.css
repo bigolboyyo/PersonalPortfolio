@@ -24,3 +24,11 @@ html,
   justify-content: space-around;
   flex-direction: row;
 }
+
+.nav-links a {
+  text-align: center;
+}
+
+h1 {
+  padding: 1rem;
+}

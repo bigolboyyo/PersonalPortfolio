@@ -1,19 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
+// import DrawingBoard from "../components/DrawingBoard";
 
 const Home = () => {
-  useEffect(() => {
-    const canvas = document.getElementById("canvas-home");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    const context = canvas.getContext("2d");
-
-    // Your canvas drawing code goes here...
-  }, []);
-
   return (
-    <div>
+    <div className="page">
       <h1>Home</h1>
-      <canvas id="canvas-home"></canvas>
+      {/* <DrawingBoard /> */}
     </div>
   );
 };
