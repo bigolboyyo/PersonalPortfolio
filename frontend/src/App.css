@@ -16,6 +16,7 @@ html,
 
 .navigation-bar {
   padding: 1rem;
+  /* border: solid; */
 }
 
 .nav-links {
@@ -31,4 +32,9 @@ html,
 
 h1 {
   padding: 1rem;
+}
+
+.page {
+  border: solid;
+  width: 100%;
 }
