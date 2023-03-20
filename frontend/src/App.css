@@ -9,6 +9,7 @@ body {
 }
 
 html,
+body,
 #root {
   height: 100%;
   width: 100%;
@@ -16,28 +17,6 @@ html,
 
 .App {
   display: flex;
-}
-
-.navigation-bar {
-  padding: 1rem;
-  /* border: solid; */
-}
-
-.nav-links {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  flex-direction: row;
-}
-
-.nav-links a {
-  text-align: center;
-}
-
-h1 {
-  padding: 1rem;
-}
-
-.page {
-  width: 100%;
+  flex-direction: column;
+  min-height: 100vh;
 }

@@ -14,6 +14,17 @@ const customComponents = {
   MuiTypography: {
     styleOverrides: {
       root: {},
+      h1: {},
+    },
+  },
+  MuiContainer: {
+    styleOverrides: {
+      root: {
+        height: `calc(100vh - 64px)`, // subtracting header height of 64px
+        width: "100%",
+        margin: 0,
+        padding: 0,
+      },
     },
   },
 };

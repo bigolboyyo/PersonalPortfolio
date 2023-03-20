@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { AppBar, Toolbar, IconButton, Typography, Drawer } from "@mui/material";
+// import { useTheme } from "@emotion/react";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import NavList from "./NavList";
 
 export default function Header() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  // Keeping this around for now for reference
+
+  // const theme = useTheme();
+  // const appBarHeight = theme.mixins.toolbar.minHeight;
 
   const toggleDrawer = (isOpen) => (event) => {
     if (

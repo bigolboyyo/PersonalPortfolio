@@ -1,11 +1,11 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, Container } from "@mui/material";
 
 const Work = () => {
   return (
-    <div className="page">
+    <Container disableGutters={true}>
       <Typography variant="h1">Work</Typography>
-    </div>
+    </Container>
   );
 };
 
