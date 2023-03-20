@@ -1,9 +1,10 @@
 import React from "react";
+import { Typography } from "@mui/material";
 
 const Contact = () => {
   return (
     <div className="page">
-      <h1>Contact</h1>
+      <Typography variant="h1">Contact</Typography>
     </div>
   );
 };
