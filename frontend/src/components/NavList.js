@@ -1,5 +1,6 @@
 import React from "react";
-import { List, ListItem, ListItemText } from "@mui/material";
+import { List, ListItemText, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function NavList({ toggleDrawer }) {
   return (
@@ -10,9 +11,16 @@ export default function NavList({ toggleDrawer }) {
     >
       <List>
         {["Home", "About", "Work", "Contact"].map((text) => (
-          <ListItem button key={text}>
+          <Button
+            key={text}
+            component={Link}
+            to={text === "Home" ? `/` : `/${text.toLowerCase()}`}
+            variant="text"
+            color="inherit"
+            sx={{ width: "100%" }}
+          >
             <ListItemText primary={text} />
-          </ListItem>
+          </Button>
         ))}
       </List>
     </div>

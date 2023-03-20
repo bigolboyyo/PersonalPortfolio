@@ -2,7 +2,6 @@ import Home from "../Pages/Home";
 import About from "../Pages/About";
 import Work from "../Pages/Work";
 import Contact from "../Pages/Contact";
-import Navigation from "../components/Navigation";
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 
