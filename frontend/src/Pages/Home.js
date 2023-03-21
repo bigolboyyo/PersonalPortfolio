@@ -1,18 +1,23 @@
 import React, { useEffect, useRef } from "react";
 import { Container } from "@mui/material";
 import Introduction from "../components/Introduction";
+import { animateRouteSwitch } from "../animations/animateRouteSwitch";
 
 const Home = () => {
-  const containerRef = useRef(null);
+  const homeRef = useRef(null);
 
   useEffect(() => {
-    const container = containerRef.current;
+    const container = homeRef.current;
     container.scrollTop = container.scrollHeight;
-  }, [containerRef.current?.scrollHeight]);
+  }, [homeRef.current?.scrollHeight]);
+
+  useEffect(() => {
+    animateRouteSwitch(null, homeRef.current);
+  }, []);
 
   return (
     <Container
-      ref={containerRef}
+      ref={homeRef}
       disableGutters
       maxWidth="false"
       sx={{ overflow: "hidden" }}

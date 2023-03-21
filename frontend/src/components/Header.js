@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { AppBar, Toolbar, IconButton, Typography, Drawer } from "@mui/material";
-// import { useTheme } from "@emotion/react";
 import { Menu as MenuIcon } from "@mui/icons-material";
+import { animateRouteSwitch } from "../animations/animateRouteSwitch";
 import NavList from "./NavList";
 
 export default function Header() {
+  const headerRef = useRef(null);
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  // Keeping this around for now for reference
-
-  // const theme = useTheme();
-  // const appBarHeight = theme.mixins.toolbar.minHeight;
+  useEffect(() => {
+    animateRouteSwitch(null, headerRef.current);
+  }, []);
 
   const toggleDrawer = (isOpen) => (event) => {
     if (
@@ -23,7 +24,7 @@ export default function Header() {
   };
 
   return (
-    <AppBar position="sticky">
+    <AppBar ref={headerRef} position="sticky">
       <Toolbar>
         <IconButton
           edge="start"

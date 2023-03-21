@@ -32,7 +32,7 @@ const customComponents = {
   MuiContainer: {
     styleOverrides: {
       root: {
-        height: `100vh`, // subtracting header height of 64px
+        height: `115%`, // subtracting header height of 64px
         margin: 0,
         padding: "0.25rem",
         backgroundColor: "#9075D8",
@@ -54,6 +54,15 @@ const customComponents = {
     styleOverrides: {
       root: {
         display: "flex",
+      },
+    },
+  },
+  MuiList: {
+    styleOverrides: {
+      root: {
+        display: "flex",
+        flexDirection: "column",
+        width: "25vmax",
       },
     },
   },
