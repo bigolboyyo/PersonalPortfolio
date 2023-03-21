@@ -2,7 +2,7 @@ import { Typography, Card, CardContent } from "@mui/material";
 import React from "react";
 import selfie from "../images/self.jpeg";
 
-import WavyAvatar from "./WavyAvatar";
+import SpinningAvatar from "./SpinningAvatar";
 
 function Introduction() {
   return (
@@ -17,7 +17,7 @@ function Introduction() {
         <Typography variant="p" sx={{ alignSelf: "flex-start" }}>
           Hello! My Name Is
         </Typography>
-        <WavyAvatar src={selfie} alt="avatar" size="40vmin" />
+        <SpinningAvatar src={selfie} />
         <Typography
           variant="h1"
           sx={{ alignSelf: "flex-end", fontSize: "3rem" }}
