@@ -1,6 +1,8 @@
-import { Typography, Card, CardContent, CardMedia } from "@mui/material";
+import { Typography, Card, CardContent } from "@mui/material";
 import React from "react";
-import selfie from "/home/grantwe/react_flask_template/frontend/src/images/self.jpeg";
+import selfie from "../images/self.jpeg";
+
+import WavyAvatar from "./WavyAvatar";
 
 function Introduction() {
   return (
@@ -12,15 +14,14 @@ function Introduction() {
           flexDirection: "column",
         }}
       >
-        <Typography sx={{ justifyContent: "flex-start" }}>
-          Hello, my name is{" "}
+        <Typography variant="p" sx={{ alignSelf: "flex-start" }}>
+          Hello! My Name Is
         </Typography>
-        <CardMedia
-          sx={{ width: "20vmin", height: "20vmin" }}
-          image={selfie}
-          title="self"
-        />
-        <Typography sx={{ justifyContent: "flex-end" }}>
+        <WavyAvatar src={selfie} alt="avatar" size="40vmin" />
+        <Typography
+          variant="h1"
+          sx={{ alignSelf: "flex-end", fontSize: "3rem" }}
+        >
           Wesley Grant
         </Typography>
       </CardContent>

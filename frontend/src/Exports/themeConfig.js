@@ -32,7 +32,7 @@ const customComponents = {
   MuiContainer: {
     styleOverrides: {
       root: {
-        height: `calc(100vh - 64px)`, // subtracting header height of 64px
+        height: `100vh`, // subtracting header height of 64px
         margin: 0,
         padding: "0.25rem",
         backgroundColor: "#9075D8",
@@ -44,8 +44,16 @@ const customComponents = {
       root: {
         display: "flex",
         padding: "0.35rem",
-        width: "60%",
         backgroundColor: "#A348A6",
+        maxWidth: "85%",
+        margin: "0 auto",
+      },
+    },
+  },
+  MuiMediaCard: {
+    styleOverrides: {
+      root: {
+        display: "flex",
       },
     },
   },
