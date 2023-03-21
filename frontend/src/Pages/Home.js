@@ -1,10 +1,11 @@
 import React from "react";
-import { Typography, Container } from "@mui/material";
+import { Container } from "@mui/material";
+import Introduction from "../components/Introduction";
 
 const Home = () => {
   return (
-    <Container disableGutters={true}>
-      <Typography variant="h1">Home</Typography>
+    <Container disableGutters={true} maxWidth="false">
+      <Introduction />
     </Container>
   );
 };

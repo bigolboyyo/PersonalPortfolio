@@ -20,3 +20,135 @@ body,
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* .product-frame {
+  width: 800px;
+  background-color: blue;
+}
+.product {
+  width: 60px;
+  height: 300px;
+  display: inline-block;
+  position: fixed;
+}
+
+/* .one {
+  animation: one-carousel 10s linear infinite;
+  -webkit-animation: one-carousel 10s linear infinite;
+  background-color: blue;
+}
+
+@keyframes one-carousel {
+  0%,
+  100% {
+    left: 370px;
+    -webkit-transform: scale(1);
+    z-index: 1;
+  }
+  20% {
+    left: 740px;
+    -webkit-transform: scale(0.6);
+    z-index: -1;
+  }
+  40% {
+    left: 370px;
+    -webkit-transform: scale(0.4);
+    z-index: -1;
+  }
+  60% {
+    left: 0px;
+    -webkit-transform: scale(0.6);
+    z-index: -1;
+  }
+}
+
+.two {
+  animation: two-carousel 10s linear infinite;
+  -webkit-animation: two-carousel 10s linear infinite;
+  background-color: orange;
+}
+
+@keyframes two-carousel {
+  0%,
+  100% {
+    left: 740px;
+    -webkit-transform: scale(0.6);
+    z-index: -1;
+  }
+  20% {
+    left: 370px;
+    -webkit-transform: scale(0.4);
+    z-index: -1;
+  }
+
+  40% {
+    left: 0px;
+    -webkit-transform: scale(0.6);
+    z-index: -1;
+  }
+  60% {
+    left: 370px;
+    -webkit-transform: scale(1);
+    z-index: 1;
+  }
+}
+
+.three {
+  animation: three-carousel 10s linear infinite;
+  -webkit-animation: three-carousel 10s linear infinite;
+  background-color: blueviolet;
+}
+
+@keyframes three-carousel {
+  0%,
+  100% {
+    left: 370px;
+    -webkit-transform: scale(0.4);
+    z-index: -1;
+  }
+  20% {
+    left: 0px;
+    -webkit-transform: scale(0.6);
+    z-index: -1;
+  }
+  40% {
+    left: 370px;
+    -webkit-transform: scale(1);
+    z-index: 1;
+  }
+  60% {
+    left: 740px;
+    -webkit-transform: scale(0.6);
+    z-index: -1;
+  }
+}
+
+.four {
+  animation: four-carousel 10s linear infinite;
+  -webkit-animation: four-carousel 10s linear infinite;
+  background-color: aqua;
+}
+
+@keyframes four-carousel {
+  0%,
+  100% {
+    left: 0px;
+    -webkit-transform: scale(0.6);
+    z-index: -1;
+  }
+  20% {
+    left: 370px;
+    -webkit-transform: scale(1);
+    z-index: 1;
+  }
+  40% {
+    left: 740px;
+    -webkit-transform: scale(0.6);
+    z-index: -1;
+  }
+  60% {
+    left: 370px;
+    -webkit-transform: scale(0.4);
+    z-index: -1;
+  }
+} */

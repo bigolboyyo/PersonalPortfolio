@@ -13,17 +13,39 @@ const customComponents = {
   },
   MuiTypography: {
     styleOverrides: {
-      root: {},
-      h1: {},
+      root: {
+        display: "flex",
+      },
+      h1: {
+        color: "#CEA2D7",
+        fontWeight: "bold",
+        letterSpacing: "2px",
+        WebkitTextStroke: "2px #9F63C4",
+      },
+      p: {
+        color: "#CEA2D7",
+        fontSize: "2.5rem",
+        WebkitTextStroke: "1px #9F63C4",
+      },
     },
   },
   MuiContainer: {
     styleOverrides: {
       root: {
         height: `calc(100vh - 64px)`, // subtracting header height of 64px
-        width: "100%",
         margin: 0,
-        padding: 0,
+        padding: "0.25rem",
+        backgroundColor: "#9075D8",
+      },
+    },
+  },
+  MuiCard: {
+    styleOverrides: {
+      root: {
+        display: "flex",
+        padding: "0.35rem",
+        width: "60%",
+        backgroundColor: "#A348A6",
       },
     },
   },
@@ -32,7 +54,7 @@ const customComponents = {
 const galaxyTheme = createTheme({
   palette: {
     primary: {
-      main: "#0F0C24",
+      main: "#674AB3",
     },
   },
   secondary: {

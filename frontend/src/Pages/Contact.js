@@ -3,7 +3,7 @@ import { Typography, Container } from "@mui/material";
 
 const Contact = () => {
   return (
-    <Container disableGutters={true}>
+    <Container disableGutters={true} maxWidth="false">
       <Typography variant="h1">Contact</Typography>
     </Container>
   );

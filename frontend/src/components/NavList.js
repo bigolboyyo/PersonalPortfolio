@@ -3,6 +3,10 @@ import { List, ListItemText, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function NavList({ toggleDrawer }) {
+  const animateRouteSwitch = async (e) => {
+    console.log(e.target.textContent);
+  };
+
   return (
     <div
       role="presentation"
@@ -18,6 +22,7 @@ export default function NavList({ toggleDrawer }) {
             variant="text"
             color="inherit"
             sx={{ width: "100%" }}
+            onClick={animateRouteSwitch}
           >
             <ListItemText primary={text} />
           </Button>

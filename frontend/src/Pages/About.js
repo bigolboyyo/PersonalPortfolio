@@ -3,7 +3,7 @@ import { Typography, Container } from "@mui/material";
 
 const About = () => {
   return (
-    <Container disableGutters={true}>
+    <Container disableGutters={true} maxWidth="false">
       <Typography variant="h1">About</Typography>
     </Container>
   );
