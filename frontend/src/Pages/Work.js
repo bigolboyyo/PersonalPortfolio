@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import { Typography, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
+import SpeechBubble from "../components/SpeechBubble";
 
 const Work = () => {
   const workRef = useRef(null);
@@ -10,8 +11,22 @@ const Work = () => {
   }, []);
 
   return (
-    <Container ref={workRef} disableGutters={true} maxWidth="false">
-      <Typography variant="h1">Work</Typography>
+    <Container
+      ref={workRef}
+      disableGutters={true}
+      maxWidth="false"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "1rem",
+      }}
+    >
+      <SpeechBubble
+        text={
+          "Hello World! I Am Wesley Grant! Let's make a much longer sentence. "
+        }
+      />
     </Container>
   );
 };
