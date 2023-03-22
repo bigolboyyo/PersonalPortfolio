@@ -25,6 +25,10 @@ body,
   display: none;
 }
 
+.MuiGrid-item {
+  padding-left: 0 !important;
+}
+
 /* .product-frame {
   width: 800px;
   background-color: blue;
