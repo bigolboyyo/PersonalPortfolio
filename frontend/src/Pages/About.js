@@ -1,36 +1,19 @@
 import React, { useEffect, useRef } from "react";
-import { Typography, Container, Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
 import { iconConfig } from "../Exports/iconConfig";
-import gsap from "gsap";
+import { animateBubbles } from "../animations/animateBubbles";
 
 const About = () => {
   const aboutRef = useRef(null);
-  // gsap.registerPlugin(DrawSVGPlugin);
 
   useEffect(() => {
     animateRouteSwitch(null, aboutRef.current);
-
-    const tl = gsap.timeline({ defaults: { duration: 1 } });
-    tl.fromTo(
-      ".skill-imgs",
-      { y: "-=200", opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.2, ease: "back.out(1.7)" }
-    ).then(() => {
-      gsap.to(".skill-imgs", {
-        duration: 1,
-        x: "+=5" && "-=5",
-        y: "+=3" && "-=3",
-        yoyo: true,
-        repeat: -1,
-        ease: "sine.inOut",
-      });
-    });
+    animateBubbles(".skill-imgs");
   }, []);
 
   return (
     <Container ref={aboutRef} disableGutters={true} maxWidth="false">
-      {/* <Typography variant="h1">About</Typography> */}
       <Grid
         container
         spacing={3}

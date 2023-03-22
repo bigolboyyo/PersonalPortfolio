@@ -1,12 +1,19 @@
 import { Typography, Card, CardContent } from "@mui/material";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import selfie from "../images/self.jpeg";
 
 import SpinningAvatar from "./SpinningAvatar";
+import { animateBubbles } from "../animations/animateBubbles";
 
 function Introduction() {
+  const introRef = useRef(null);
+
+  useEffect(() => {
+    animateBubbles(introRef.current);
+  }, []);
+
   return (
-    <Card raised={true}>
+    <Card ref={introRef} raised={true}>
       <CardContent
         sx={{
           width: "100%",
