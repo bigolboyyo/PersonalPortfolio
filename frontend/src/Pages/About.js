@@ -30,7 +30,7 @@ const About = () => {
 
   return (
     <Container ref={aboutRef} disableGutters={true} maxWidth="false">
-      <Typography variant="h1">About</Typography>
+      {/* <Typography variant="h1">About</Typography> */}
       <Grid
         container
         spacing={3}
@@ -59,7 +59,7 @@ const About = () => {
                 src={item.icon}
                 alt={item.name}
                 key={item.name + "-svg"}
-                width="80%"
+                width="70%"
                 style={{
                   boxShadow: "12px 12px 12px rgba(0, 0, 0, 0.25)",
                   border: "6px solid black",

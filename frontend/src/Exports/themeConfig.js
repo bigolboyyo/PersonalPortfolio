@@ -32,7 +32,7 @@ const customComponents = {
   MuiContainer: {
     styleOverrides: {
       root: {
-        height: `150%`, // subtracting header height of 64px
+        height: `300%`, // subtracting header height of 64px
         margin: 0,
         padding: "0.25rem",
         backgroundColor: "#9075D8",
