@@ -1,24 +1,3 @@
-# from flask import Flask, request
-
-# # IF IT WORKS THIS WILL APPEAR ON PYTHON ANYWHERE!!
-
-# app = Flask(__name__)
-
-# @app.route('/contact', methods=['GET', 'POST'])
-# def contact():
-#     if request.method == 'POST':
-#         name = request.form['name']
-#         email = request.form['email']
-#         message = request.form['message']
-#         # Insert your email handling code here
-#         # ...
-#         return 'Thank you for contacting me!'
-#     else:
-#         return 'This is the contact page. Use a POST request to submit a message.'
-
-# if __name__ == '__main__':
-#     app.run()
-
 from flask import Flask, render_template, request, jsonify
 from flask_mail import Mail, Message
 from flask_wtf import CSRFProtect, FlaskForm
@@ -28,6 +7,8 @@ from wtforms.validators import DataRequired, Email
 # from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
+app.debug = True
+
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'youremail@gmail.com'

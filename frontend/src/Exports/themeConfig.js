@@ -17,15 +17,17 @@ const customComponents = {
         display: "flex",
       },
       h1: {
-        color: "#CEA2D7",
+        color: "#EBB9EA",
         fontWeight: "bold",
         letterSpacing: "2px",
-        WebkitTextStroke: "2px #9F63C4",
+        WebkitTextStroke: "2px #000",
+        fontFamily: "Freckle Face",
       },
       p: {
-        color: "#CEA2D7",
-        fontSize: "2.5rem",
-        WebkitTextStroke: "1px #9F63C4",
+        color: "#EBB9EA",
+        fontSize: "clamp(1rem, 5vmax, 3rem)",
+        WebkitTextStroke: "2.5px #000",
+        fontFamily: "Freckle Face",
       },
     },
   },
@@ -34,8 +36,8 @@ const customComponents = {
       root: {
         height: `300%`, // subtracting header height of 64px
         margin: 0,
-        padding: "0.25rem",
-        backgroundColor: "#9075D8",
+        padding: "0.35rem",
+        backgroundColor: "#000",
         width: "100%",
       },
     },
@@ -45,10 +47,10 @@ const customComponents = {
       root: {
         display: "flex",
         padding: "0.35rem",
-        backgroundColor: "#A348A6",
-        maxWidth: "75%",
+        backgroundColor: "#000",
+        maxWidth: "100%",
         maxHeight: "65%",
-        margin: "1rem auto",
+        margin: "0.75rem auto",
       },
     },
   },
@@ -73,12 +75,12 @@ const customComponents = {
 const galaxyTheme = createTheme({
   palette: {
     primary: {
-      main: "#674AB3",
+      main: "#40AAFE",
     },
   },
   secondary: {
-    light: "#C1436D",
-    main: "#A350A3",
+    light: "#EBB9EA",
+    main: "#40AAFE",
   },
   components: customComponents,
 });

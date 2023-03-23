@@ -13,7 +13,12 @@ const About = () => {
   }, []);
 
   return (
-    <Container ref={aboutRef} disableGutters={true} maxWidth="false">
+    <Container
+      ref={aboutRef}
+      disableGutters={true}
+      maxWidth="false"
+      sx={{ height: "100vh", overflow: "hidden", position: "fixed" }}
+    >
       <Grid
         container
         spacing={3}
@@ -23,6 +28,7 @@ const About = () => {
           alignItems: "center",
           margin: "0",
           width: "100%",
+          height: "calc(100vh - 78px)",
         }}
       >
         {iconConfig.map((item) => (
@@ -42,13 +48,15 @@ const About = () => {
                 src={item.icon}
                 alt={item.name}
                 key={item.name + "-svg"}
-                width="70%"
+                width="30%"
                 style={{
                   boxShadow: "12px 12px 12px rgba(0, 0, 0, 0.25)",
-                  border: "6px solid black",
+                  border: "6px solid #40AAFE",
                   borderRadius: "25%",
-                  padding: "1rem",
+                  padding: "0.5rem",
                   backgroundColor: "#DCDCDC",
+                  minWidth: "64px",
+                  maxWidth: "200px",
                 }}
               />
             </div>

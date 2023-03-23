@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Container } from "@mui/material";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
-import SpeechBubble from "../components/SpeechBubble";
 
 const Work = () => {
   const workRef = useRef(null);
@@ -21,13 +20,7 @@ const Work = () => {
         alignItems: "center",
         padding: "1rem",
       }}
-    >
-      <SpeechBubble
-        text={
-          "Hello World! I Am Wesley Grant! Let's make a much longer sentence. "
-        }
-      />
-    </Container>
+    ></Container>
   );
 };
 
