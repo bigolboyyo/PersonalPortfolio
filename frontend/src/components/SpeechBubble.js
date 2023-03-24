@@ -21,10 +21,11 @@ const SpeechBubble = ({
       ref={speechBubbleRef}
       sx={{
         position: "relative",
+        textAlign: "center",
         backgroundColor: "#F5FEFD",
         border: "solid #40AAFE 4px",
         borderRadius: "20px",
-        padding: "1rem",
+        padding: "0.35rem",
         minWidth: minWidth,
         maxWidth: "50vw",
         display: "flex",

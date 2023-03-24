@@ -1,11 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container, Grid } from "@mui/material";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
 import { iconConfig } from "../Exports/iconConfig";
 import { animateBubbles } from "../animations/animateBubbles";
 
 const About = () => {
+  const [gridHeight, setGridHeight] = useState("");
   const aboutRef = useRef(null);
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    setGridHeight(gridRef.current?.offsetHeight);
+    aboutRef.current.style.height = `${gridHeight}px`;
+  }, []);
 
   useEffect(() => {
     animateRouteSwitch(null, aboutRef.current);
@@ -17,9 +24,13 @@ const About = () => {
       ref={aboutRef}
       disableGutters={true}
       maxWidth="false"
-      sx={{ height: "100vh", overflow: "hidden", position: "fixed" }}
+      sx={{
+        height: `clamp(calc(100vh + 72px), ${gridHeight + 72}px, 100vmax)`,
+        overflow: "hidden",
+      }}
     >
       <Grid
+        ref={gridRef}
         container
         spacing={3}
         sx={{
@@ -28,7 +39,7 @@ const About = () => {
           alignItems: "center",
           margin: "0",
           width: "100%",
-          height: "calc(100vh - 78px)",
+          height: "calc(100vh - 72px)",
         }}
       >
         {iconConfig.map((item) => (

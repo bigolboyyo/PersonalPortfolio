@@ -48,7 +48,6 @@ const customComponents = {
         display: "flex",
         padding: "0.35rem",
         backgroundColor: "#000",
-        maxWidth: "100%",
         maxHeight: "65%",
         margin: "0.75rem auto",
       },
@@ -58,6 +57,8 @@ const customComponents = {
     styleOverrides: {
       root: {
         display: "flex",
+        width: "55%",
+        maxWidth: "56%",
       },
     },
   },
@@ -66,7 +67,6 @@ const customComponents = {
       root: {
         display: "flex",
         flexDirection: "column",
-        width: "25vmax",
       },
     },
   },

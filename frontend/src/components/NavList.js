@@ -19,10 +19,16 @@ export default function NavList({ toggleDrawer }) {
         display: "flex",
         flexDirection: "column",
         height: "100%",
+        width: "13vmax",
       }}
     >
       <List
-        sx={{ flexGrow: 1, textAlign: "center", placeContent: "space-evenly" }}
+        sx={{
+          flexGrow: 3,
+          textAlign: "center",
+          justifyContent: "center",
+          gap: "1rem",
+        }}
       >
         {["Home", "About", "Work", "Contact"].map((text) => (
           <Button
@@ -39,7 +45,13 @@ export default function NavList({ toggleDrawer }) {
         ))}
       </List>
       <Divider />
-      <List>
+      <List
+        sx={{
+          flexGrow: 1,
+          justifyContent: "center",
+          gap: "1rem",
+        }}
+      >
         {socialLinks.map((link) => (
           <Button
             key={link.text}

@@ -19,17 +19,19 @@ function Introduction() {
       sx={{
         boxShadow: "none",
         marginTop: 0,
-        maxWidth: "80%",
+        width: "100%",
+        maxWidth: "100%",
+        justifyContent: "center",
       }}
     >
       <CardContent
         sx={{
-          width: "100%",
           gap: "1.5rem",
           display: "flex",
           flexDirection: "column",
-          height: "calc(100vh - 78px)",
+          //   height: "calc(100vh - 64px)",
           justifyContent: "center",
+          width: "clamp(60%, 60vmax, 80%)",
         }}
       >
         <SpeechBubble

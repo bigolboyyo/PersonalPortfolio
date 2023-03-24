@@ -9,7 +9,7 @@ export const getTriangleStyles = (trianglePosition) => {
         borderRight: "20px solid transparent",
         borderBottom: "20px solid #40AAFE",
         top: "-20px",
-        left: `calc(50% - 20px)`,
+        left: `calc(25%)`,
       };
     case "west":
       return {
@@ -31,7 +31,7 @@ export const getTriangleStyles = (trianglePosition) => {
         borderRight: "20px solid transparent",
         borderTop: "20px solid #40AAFE",
         bottom: "-20px",
-        left: `calc(50% - 20px)`,
+        left: `calc(75% )`,
       };
     case "east":
       return {
