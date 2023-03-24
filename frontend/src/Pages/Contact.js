@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Typography, Container } from "@mui/material";
+import ContactForm from "../components/ContactForm";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
 
 const Contact = () => {
@@ -10,8 +11,18 @@ const Contact = () => {
   }, []);
 
   return (
-    <Container ref={contactRef} disableGutters={true} maxWidth="false">
-      <Typography variant="h1">Contact</Typography>
+    <Container
+      ref={contactRef}
+      disableGutters={true}
+      maxWidth="false"
+      sx={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <ContactForm />
     </Container>
   );
 };

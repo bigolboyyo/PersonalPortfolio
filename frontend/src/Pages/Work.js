@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Container } from "@mui/material";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
+import emmaClouds from "../images/clousd.jpg";
 
 const Work = () => {
   const workRef = useRef(null);

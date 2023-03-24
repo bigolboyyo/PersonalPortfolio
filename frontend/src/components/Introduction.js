@@ -23,11 +23,14 @@ function Introduction() {
         maxWidth: "100%",
         justifyContent: "center",
         height: "100%",
+
+        backgroundColor: "transparent",
+        // backdropFilter: "blur(3px)",
       }}
     >
       <CardContent
         sx={{
-          gap: "clamp(0.75rem, 1.5rem, 2.5%)",
+          gap: "clamp(1.25rem, 1.5rem, 2.5%)",
           display: "flex",
           flexDirection: "column",
           height: "92.5vh",

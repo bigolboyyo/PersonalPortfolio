@@ -1,4 +1,7 @@
 import { createTheme } from "@mui/material/styles";
+import emmaClouds from "../images/clousd.jpg";
+
+const backgroundImage = `url(${emmaClouds})`;
 
 const customComponents = {
   MuiButton: {
@@ -25,7 +28,7 @@ const customComponents = {
       },
       p: {
         color: "#EBB9EA",
-        fontSize: "clamp(1rem, 4vmax, 5rem)",
+        fontSize: "clamp(1.5rem, 4vmax, 5rem)",
         WebkitTextStroke: "2px #000",
         fontFamily: "Freckle Face",
       },
@@ -39,6 +42,10 @@ const customComponents = {
         padding: "0.35rem",
         backgroundColor: "#000",
         width: "100%",
+        backgroundImage,
+        backgroundPosition: "center",
+        backgroundRepeat: "repeat",
+        backgroundSize: "contain",
       },
     },
   },
