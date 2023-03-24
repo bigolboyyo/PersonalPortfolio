@@ -42,8 +42,8 @@ export default function SpinningAvatar({ src }) {
       className="avatar"
       onClick={handleClick}
       sx={{
-        width: "40vmin",
-        height: "40vmin",
+        width: "30vmin",
+        height: "30vmin",
         alignSelf: "center",
         border: "solid #40AAFE 4px",
       }}

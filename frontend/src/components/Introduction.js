@@ -22,20 +22,23 @@ function Introduction() {
         width: "100%",
         maxWidth: "100%",
         justifyContent: "center",
+        height: "100%",
       }}
     >
       <CardContent
         sx={{
-          gap: "1.5rem",
+          gap: "clamp(0.75rem, 1.5rem, 2.5%)",
           display: "flex",
           flexDirection: "column",
-          //   height: "calc(100vh - 64px)",
+          height: "92.5vh",
           justifyContent: "center",
           width: "clamp(60%, 60vmax, 80%)",
         }}
       >
         <SpeechBubble
-          text={<Typography variant="p">Hello, I am Wesley Grant!</Typography>}
+          text={
+            <Typography variant="p">Hello, My name is Wesley Grant!</Typography>
+          }
           trianglePosition="south"
           flexAlign="flex-start"
         />

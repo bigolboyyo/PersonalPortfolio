@@ -25,8 +25,8 @@ const customComponents = {
       },
       p: {
         color: "#EBB9EA",
-        fontSize: "clamp(1rem, 5vmax, 3rem)",
-        WebkitTextStroke: "2.5px #000",
+        fontSize: "clamp(1rem, 4vmax, 5rem)",
+        WebkitTextStroke: "2px #000",
         fontFamily: "Freckle Face",
       },
     },
