@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Typography, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import ContactForm from "../components/ContactForm";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
 
@@ -16,7 +16,7 @@ const Contact = () => {
       disableGutters={true}
       maxWidth="false"
       sx={{
-        height: "100vh",
+        height: "calc(100vh + 64px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",

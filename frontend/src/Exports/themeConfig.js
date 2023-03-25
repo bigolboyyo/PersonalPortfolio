@@ -18,6 +18,7 @@ const customComponents = {
     styleOverrides: {
       root: {
         display: "flex",
+        fontFamily: "Freckle Face",
       },
       h1: {
         color: "#EBB9EA",
@@ -31,6 +32,7 @@ const customComponents = {
         fontSize: "clamp(1.5rem, 4vmax, 5rem)",
         WebkitTextStroke: "2px #000",
         fontFamily: "Freckle Face",
+        textShadow: "2px 4px black",
       },
     },
   },
@@ -77,9 +79,19 @@ const customComponents = {
       },
     },
   },
+  MuiInputLabel: {
+    styleOverrides: {
+      root: {
+        color: "white",
+        fontFamily: "Freckle Face",
+        letterSpacing: "0.15rem",
+        textShadow: "2px 4px black",
+      },
+    },
+  },
 };
 
-const galaxyTheme = createTheme({
+const mainTheme = createTheme({
   palette: {
     primary: {
       main: "#40AAFE",
@@ -92,40 +104,4 @@ const galaxyTheme = createTheme({
   components: customComponents,
 });
 
-const earnestTheme = createTheme({
-  palette: {
-    primary: {
-      main: "#1F3044",
-    },
-  },
-  secondary: {
-    light: "#646C79",
-    main: "#FB9039",
-  },
-});
-
-const slumberTheme = createTheme({
-  palette: {
-    primary: {
-      main: "#051622",
-    },
-  },
-  secondary: {
-    light: "#DEB992",
-    main: "#1BA098",
-  },
-});
-
-const tropicalTheme = createTheme({
-  palette: {
-    primary: {
-      main: "#5AC3B0",
-    },
-  },
-  secondary: {
-    light: "#F7CD46",
-    main: "#DE5935",
-  },
-});
-
-export { galaxyTheme, earnestTheme, slumberTheme, tropicalTheme };
+export { mainTheme };

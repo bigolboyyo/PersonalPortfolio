@@ -27,7 +27,7 @@ const SpeechBubble = ({
         borderRadius: "20px",
         padding: "0.35rem",
         minWidth: minWidth,
-        maxWidth: "50vw",
+        maxWidth: "60vw",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",

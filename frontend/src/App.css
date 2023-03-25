@@ -30,6 +30,75 @@ body,
   padding-left: 0 !important;
 }
 
+.custom-caret {
+  position: absolute;
+  height: 1.4rem;
+  width: 0.5rem;
+  background-color: black;
+  animation: blink-caret 0.75s step-end infinite;
+
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    visibility: visible;
+  }
+  50% {
+    visibility: hidden;
+  }
+}
+
+.textarea-custom-caret.end + .custom-caret {
+  left: 100%;
+  top: 0;
+}
+
+.textarea-custom-caret {
+  position: relative;
+}
+
+.textarea-custom-caret::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #666;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.2s ease-in-out;
+}
+
+.textarea-custom-caret.end::before {
+  left: calc(100% - 8px);
+}
+
+/* style the custom caret */
+.textarea-custom-caret::after {
+  content: "|";
+  /* display a vertical bar as the caret */
+  position: absolute;
+  right: 0; /* position it at the end of the text */
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 1em;
+  color: black; /* set the color of the caret */
+  animation: blink 1s infinite; /* animate the caret */
+}
+
+/* blink animation */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 /* .product-frame {
   width: 800px;
   background-color: blue;

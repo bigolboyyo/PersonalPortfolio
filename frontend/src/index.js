@@ -5,9 +5,6 @@ import routes from "./Exports/routes";
 
 import App from "./App";
 
-import { galaxyTheme } from "./Exports/themeConfig";
-import { ThemeProvider } from "@emotion/react";
-
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -15,6 +12,9 @@ import "@fontsource/roboto/700.css";
 
 import "@fontsource/rubik-bubbles";
 import "@fontsource/freckle-face";
+
+import { mainTheme } from "./Exports/themeConfig";
+import { ThemeProvider } from "@emotion/react";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -24,7 +24,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={galaxyTheme}>
+    <ThemeProvider theme={mainTheme}>
       <RouterProvider router={router}>
         <App />
       </RouterProvider>

@@ -1,18 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
 import { iconConfig } from "../Exports/iconConfig";
 import { animateBubbles } from "../animations/animateBubbles";
 
 const About = () => {
   const [gridHeight, setGridHeight] = useState("");
+  // const [gridWidth, setGridWidth] = useState("");
 
   const aboutRef = useRef(null);
   const gridRef = useRef(null);
+  const filterRef = useRef(null);
 
   useEffect(() => {
     setGridHeight(gridRef.current?.offsetHeight);
+    // setGridWidth(gridRef.current?.offsetWidth);
     aboutRef.current.style.height = `${gridHeight}px`;
+
     // eslint-disable-next-line
   }, []);
 
@@ -34,6 +38,18 @@ const About = () => {
         alignItems: "center",
       }}
     >
+      <Box
+        ref={filterRef}
+        sx={{
+          background: "transparent",
+          backdropFilter: "blur(7px) contrast(0.8)",
+          top: 0,
+          outline: "solid transparent",
+          width: `100vmax`,
+          height: "100vmax",
+          position: "fixed",
+        }}
+      />
       <Grid
         ref={gridRef}
         container
@@ -77,9 +93,6 @@ const About = () => {
             </div>
           </Grid>
         ))}
-        {/* <Typography variant="p" sx={{ position: "fixed", bottom: "1rem" }}>
-          Oh, you found me...
-        </Typography> */}
       </Grid>
     </Container>
   );
