@@ -21,10 +21,24 @@ export default function ContactForm() {
   const talkRef = useRef(null);
   const inputRef = useRef(null);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
-    // send form data to server
+
+    const response = await fetch("http://127.0.0.1:5000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+      }),
+    });
+    debugger;
+    const data = await response.json();
+    console.log(data);
   };
 
   const handleTextareaChange = (e) => {
@@ -75,8 +89,6 @@ export default function ContactForm() {
           borderRadius: "20px",
           backdropFilter: "blur(7px) contrast(0.6)",
           overflowY: "auto",
-
-          // es-lint-disable-next-line
         }}
       >
         <FormControl sx={{ width: "90%", mb: 2 }}>
@@ -87,6 +99,7 @@ export default function ContactForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            sx={{ color: "white" }}
           />
         </FormControl>
 
@@ -98,6 +111,7 @@ export default function ContactForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            sx={{ color: "white" }}
           />
         </FormControl>
 
