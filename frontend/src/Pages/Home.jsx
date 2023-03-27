@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { Container } from "@mui/material";
 import Introduction from "../components/Introduction";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
-import CircleAnimation from "../animations/CircleAnimation";
-import { handleMouseClick } from "../handlers/handleMouseClick";
+import CircleAnimation from "../components/CircleAnimation";
+import { mouseClickAnimation } from "../animations/mouseClickAnimation";
 
 const Home = () => {
   const homeRef = useRef(null);
@@ -25,7 +25,7 @@ const Home = () => {
       disableGutters
       maxWidth="false"
       sx={{ overflow: "hidden" }}
-      onClick={(e) => handleMouseClick(e, circleRef.current, homeRef)}
+      onClick={(e) => mouseClickAnimation(e, circleRef.current, homeRef)}
     >
       <CircleAnimation circleRef={circleRef} />
       <Introduction />

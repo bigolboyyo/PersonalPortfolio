@@ -45,7 +45,7 @@ export default function SpinningAvatar({ src }) {
         width: "33.5vmin",
         height: "33.5vmin",
         alignSelf: "center",
-        border: "solid #40AAFE 4px",
+        // border: "solid #40AAFE 4px",
       }}
       src={src}
       title="self"
