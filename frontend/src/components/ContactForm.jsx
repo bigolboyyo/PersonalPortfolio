@@ -25,10 +25,12 @@ export default function ContactForm() {
     event.preventDefault();
     console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
 
-    const response = await fetch("http://127.0.0.1:5000/contact", {
+    const response = await fetch("http://localhost:5000/contact", {
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify({
         name,
@@ -36,7 +38,6 @@ export default function ContactForm() {
         message,
       }),
     });
-    debugger;
     const data = await response.json();
     console.log(data);
   };
