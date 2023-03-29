@@ -89,6 +89,23 @@ const customComponents = {
       },
     },
   },
+  MuiSnackbar: {
+    styleOverrides: {
+      root: {
+        right: null,
+        left: null,
+        bottom: null,
+        "@media (min-width: 600px)": {
+          left: "0 !important",
+          right: "0 !important",
+        },
+        "@media (max-width: 599.95px)": {
+          left: "0 !important",
+          right: "0 !important",
+        },
+      },
+    },
+  },
 };
 
 const mainTheme = createTheme({

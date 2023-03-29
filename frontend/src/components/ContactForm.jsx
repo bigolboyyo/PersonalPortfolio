@@ -10,12 +10,19 @@ import {
   Typography,
 } from "@mui/material";
 import { animateBubbles } from "../animations/animateBubbles";
+import { responseHandler } from "../Exports/responseHandler";
+import Notifications from "./Notifications";
+import Loading from "./Loading";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [charCount, setCharCount] = useState(1000);
+  const [open, setOpen] = useState(false);
+  const [severity, setSeverity] = useState("success");
+  const [responseMsg, setResponseMsg] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const contactRef = useRef(null);
   const talkRef = useRef(null);
@@ -23,8 +30,13 @@ export default function ContactForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
-
+    if (!name || !email || !message) {
+      setResponseMsg("All fields required to submit.");
+      setSeverity("warning");
+      setOpen(true);
+      return;
+    }
+    setIsLoading(true);
     const response = await fetch("http://localhost:5000/contact", {
       method: "POST",
       mode: "cors",
@@ -39,7 +51,15 @@ export default function ContactForm() {
       }),
     });
     const data = await response.json();
-    console.log(data);
+
+    responseHandler(response, setSeverity, setResponseMsg, data);
+
+    setIsLoading(false);
+
+    setOpen(true);
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   const handleTextareaChange = (e) => {
@@ -120,11 +140,8 @@ export default function ContactForm() {
           <TextareaAutosize
             ref={inputRef}
             id="message"
-            // placeholder="Message"
             value={message}
-            // onChange={(e) => setMessage(e.target.value)}
             onChange={handleTextareaChange}
-            required
             minRows={8}
             maxRows={10}
             cols={50}
@@ -154,19 +171,23 @@ export default function ContactForm() {
           </Typography>
         </FormControl>
 
-        <Button
-          variant="contained"
-          type="submit"
-          onClick={handleSubmit}
-          sx={{
-            width: "25%",
-            mb: 2,
-            fontFamily: "Freckle Face",
-            letterSpacing: "0.15rem",
-          }}
-        >
-          Send
-        </Button>
+        {isLoading ? (
+          <Loading loading={isLoading} />
+        ) : (
+          <Button
+            variant="contained"
+            type="submit"
+            onClick={handleSubmit}
+            sx={{
+              width: "25%",
+              mb: 2,
+              fontFamily: "Freckle Face",
+              letterSpacing: "0.15rem",
+            }}
+          >
+            Send
+          </Button>
+        )}
 
         <FormHelperText
           sx={{
@@ -180,6 +201,12 @@ export default function ContactForm() {
           I'll never share your email with anyone else.
         </FormHelperText>
       </Box>
+      <Notifications
+        open={open}
+        setOpen={setOpen}
+        severity={severity}
+        responseMsg={responseMsg}
+      />
     </>
   );
 }
