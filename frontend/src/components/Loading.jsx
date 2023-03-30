@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import LoadingIcon from "../images/icon-loading.png";
 
-const Loading = ({ loading }) => {
+const Loading = ({ loading, width = "64px" }) => {
   const loadingRef = useRef(null);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const Loading = ({ loading }) => {
       ref={loadingRef}
       alt="loading icon"
       src={LoadingIcon}
-      style={{ width: "64px", objectFit: "contain" }}
+      style={{ width: width, objectFit: "contain" }}
     />
   ) : null;
 };

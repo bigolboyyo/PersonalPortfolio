@@ -41,7 +41,6 @@ def contact():
         if data is None:
             return jsonify({'message': 'No JSON data received'}), 400
         
-
         name = data['name']
         email = data['email']
         message = data['message']
@@ -59,9 +58,7 @@ def contact():
         try:
             # sg = SendGridAPIClient(SENDGRID_API_KEY)
             # response = sg.send(composed_email)
-            # print(f'Email sent successfully: {response.status_code}')
             time.sleep(3)
-            print("Testing ONE TWO")
             return jsonify({'message': 'Email sent successfully.'}), 200
         except Exception as e:
             error_msg = {'An error occurred while sending the email. Please try again later.'}

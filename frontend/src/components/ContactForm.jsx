@@ -31,7 +31,7 @@ export default function ContactForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!name || !email || !message) {
-      setResponseMsg("All fields required to submit.");
+      setResponseMsg("All fields required to send message.");
       setSeverity("warning");
       setOpen(true);
       return;

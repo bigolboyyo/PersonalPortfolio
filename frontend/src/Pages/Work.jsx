@@ -1,36 +1,45 @@
 import React, { useEffect, useRef } from "react";
-import { Container } from "@mui/material";
+import { Grid, Container, Box } from "@mui/material";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
-import { mouseClickAnimation } from "../animations/mouseClickAnimation";
-import CircleAnimation from "../components/CircleAnimation";
+import MainCard from "../components/MainCard";
+import SmallCard from "../components/SmallCard";
 
 const Work = () => {
   const workRef = useRef(null);
-  const circleRef = useRef(null);
 
   useEffect(() => {
     animateRouteSwitch(null, workRef.current);
   }, []);
 
   return (
-    <Container
-      ref={workRef}
-      disableGutters={true}
-      maxWidth="false"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "1rem",
-        position: "relative",
-      }}
-      //To make this work here I had to add position relative
-      // the mouseClickAnimation looks for a relative anchor.
-      // so if container is the relative anchor without another component
-      // the positioning is all skewed
-      onClick={(e) => mouseClickAnimation(e, circleRef.current, workRef)}
-    >
-      <CircleAnimation circleRef={circleRef} />
+    <Container ref={workRef} disableGutters={true} maxWidth="false">
+      <Grid container spacing={2} direction="column">
+        <Grid item xs={12} md={8}>
+          <Box p={2} sx={{ paddingRight: 0 }}>
+            <MainCard />
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Grid container spacing={2} justifyContent="center">
+            {[...Array(6)].map((_, index) => (
+              <Grid
+                key={index}
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                lg={4}
+                xl={4}
+                sx={{ paddingLeft: "16px !important" }}
+              >
+                <Box p={2} sx={{ paddingRight: 0 }}>
+                  <SmallCard />
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
+      </Grid>
     </Container>
   );
 };
