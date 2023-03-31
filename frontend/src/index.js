@@ -21,22 +21,38 @@ function Root() {
 
   const [loaded, setLoaded] = useState(false);
 
+  const [isFirstVisit, setIsFirstVisit] = useState(false);
+
   useEffect(() => {
     const timerId = setTimeout(() => {
       setLoaded(true);
-    }, 7000);
+    }, 10000);
 
     const loadHandler = () => {
       clearTimeout(timerId);
       setLoaded(true);
     };
 
-    window.addEventListener("load", loadHandler);
+    if (isFirstVisit) {
+      window.addEventListener("load", loadHandler);
+      window.addEventListener("DOMContentLoaded", loadHandler);
+    } else {
+      setLoaded(true);
+    }
 
     return () => {
       window.removeEventListener("load", loadHandler);
+      window.removeEventListener("DOMContentLoaded", loadHandler);
       clearTimeout(timerId);
     };
+  }, [isFirstVisit]);
+
+  useEffect(() => {
+    const visitedBefore = localStorage.getItem("visitedBefore");
+    if (!visitedBefore) {
+      setIsFirstVisit(true);
+      localStorage.setItem("visitedBefore", true);
+    }
   }, []);
 
   return (
