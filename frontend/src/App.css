@@ -6,6 +6,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 html,
@@ -14,12 +15,14 @@ body,
   height: 100%;
   width: 100%;
   background: linear-gradient(to bottom, #ebb9ea, #40aafe);
+  overflow-x: hidden;
 }
 
 .App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -30,7 +33,7 @@ body,
   padding-left: 0 !important;
 }
 
-.custom-caret {
+/* .custom-caret {
   position: absolute;
   height: 1.4rem;
   width: 0.5rem;
@@ -78,26 +81,26 @@ body,
   left: calc(100% - 8px);
 }
 
-/* style the custom caret */
+/* style the custom caret
 .textarea-custom-caret::after {
   content: "|";
-  /* display a vertical bar as the caret */
+  /* display a vertical bar as the caret 
   position: absolute;
-  right: 0; /* position it at the end of the text */
+  right: 0; /* position it at the end of the text 
   top: 0;
   bottom: 0;
   margin: auto;
   height: 1em;
-  color: black; /* set the color of the caret */
-  animation: blink 1s infinite; /* animate the caret */
-}
+  color: black; /* set the color of the caret 
+  animation: blink 1s infinite; /* animate the caret 
+} */
 
-/* blink animation */
+/* blink animation 
 @keyframes blink {
   50% {
     opacity: 0;
   }
-}
+} */
 
 /* .product-frame {
   width: 800px;
