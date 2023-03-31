@@ -5,7 +5,12 @@ import SmallCard from "./SmallCard.jsx";
 
 function WorkGrid() {
   return (
-    <Grid container spacing={2} direction="column">
+    <Grid
+      container
+      spacing={2}
+      direction="column"
+      sx={{ alignContent: "center" }}
+    >
       <Grid item xs={12} md={8}>
         <Box p={2} sx={{ paddingRight: 0 }}>
           <MainCard />

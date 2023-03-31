@@ -12,6 +12,7 @@ function SmallCard() {
   return (
     <Card
       sx={{
+        width: "30vmax",
         maxWidth: 300,
         marginBottom: "2rem",
         border: "solid white",

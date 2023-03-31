@@ -14,7 +14,7 @@ function MainCard() {
       sx={{
         maxWidth: 1000,
         marginBottom: "2rem",
-        width: "50vmax",
+        width: "40vmax",
         border: "solid white",
         padding: 0,
       }}
