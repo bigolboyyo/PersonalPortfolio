@@ -106,6 +106,13 @@ const customComponents = {
       },
     },
   },
+  MuiCardContent: {
+    styleOverrides: {
+      root: {
+        padding: "0 !important",
+      },
+    },
+  },
 };
 
 const mainTheme = createTheme({
