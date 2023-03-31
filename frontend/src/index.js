@@ -22,16 +22,23 @@ function Root() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
+    const timerId = setTimeout(() => {
       setLoaded(true);
-    }, 20000);
+    }, 10000);
 
-    window.addEventListener("load", () => {
-      clearTimeout(timeoutId);
+    const loadHandler = () => {
+      clearTimeout(timerId);
       setLoaded(true);
-    });
+    };
 
-    return () => clearTimeout(timeoutId);
+    window.addEventListener("load", loadHandler);
+    window.addEventListener("DOMContentLoaded", loadHandler);
+
+    return () => {
+      window.removeEventListener("load", loadHandler);
+      window.removeEventListener("DOMContentLoaded", loadHandler);
+      clearTimeout(timerId);
+    };
   }, []);
 
   return (
