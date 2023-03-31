@@ -21,38 +21,33 @@ function Root() {
 
   const [loaded, setLoaded] = useState(false);
 
-  const [isFirstVisit, setIsFirstVisit] = useState(false);
-
   useEffect(() => {
+    const loadTimestamp = localStorage.getItem("loadTimestamp");
+
+    if (loadTimestamp && Date.now() - loadTimestamp < 60 * 60 * 1000) {
+      setLoaded(true);
+      return;
+    }
+
     const timerId = setTimeout(() => {
       setLoaded(true);
+      localStorage.setItem("loadTimestamp", Date.now());
     }, 10000);
 
     const loadHandler = () => {
       clearTimeout(timerId);
       setLoaded(true);
+      localStorage.setItem("loadTimestamp", Date.now());
     };
 
-    if (isFirstVisit) {
-      window.addEventListener("load", loadHandler);
-      window.addEventListener("DOMContentLoaded", loadHandler);
-    } else {
-      setLoaded(true);
-    }
+    window.addEventListener("load", loadHandler);
+    window.addEventListener("DOMContentLoaded", loadHandler);
 
     return () => {
       window.removeEventListener("load", loadHandler);
       window.removeEventListener("DOMContentLoaded", loadHandler);
       clearTimeout(timerId);
     };
-  }, [isFirstVisit]);
-
-  useEffect(() => {
-    const visitedBefore = localStorage.getItem("visitedBefore");
-    if (!visitedBefore) {
-      setIsFirstVisit(true);
-      localStorage.setItem("visitedBefore", true);
-    }
   }, []);
 
   return (
