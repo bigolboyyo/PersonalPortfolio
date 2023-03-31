@@ -22,7 +22,7 @@ function SmallCard() {
     if (contentRef.current) {
       gsap.to(contentRef.current, {
         maxHeight: showDetails ? contentRef.current.scrollHeight : 0,
-        duration: 0.5,
+        duration: 0.7,
         ease: "Power3.easeInOut",
       });
     }
@@ -49,7 +49,6 @@ function SmallCard() {
             objectFit: "cover",
             maxHeight: "100%",
             maxWidth: "100%",
-            height: "auto",
           }}
         />
         <CardContent>
@@ -73,6 +72,7 @@ function SmallCard() {
             sx={{
               maxHeight: showDetails ? contentRef.current.scrollHeight : 0,
               overflow: "hidden",
+              textAlign: "center",
             }}
           >
             {showDetails && (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Card,
   CardActionArea,
@@ -8,8 +8,26 @@ import {
   Typography,
 } from "@mui/material";
 import ProjectLink from "./ProjectLink";
+import gsap from "gsap";
 
 function MainCard() {
+  const [showDetails, setShowDetails] = useState(false);
+  const contentRef = useRef(null);
+
+  const handleClick = () => {
+    setShowDetails(!showDetails);
+  };
+
+  useEffect(() => {
+    if (contentRef.current) {
+      gsap.to(contentRef.current, {
+        maxHeight: showDetails ? contentRef.current.scrollHeight : 0,
+        duration: 0.7,
+        ease: "Power3.easeInOut",
+      });
+    }
+  }, [showDetails]);
+
   return (
     <Card
       sx={{
@@ -17,11 +35,12 @@ function MainCard() {
         marginBottom: "2rem",
         width: "40vmax",
         padding: 0,
+        paddingBottom: "0.5rem",
         backgroundColor: "transparent",
         backdropFilter: "blur(7px) contrast(0.6)",
       }}
     >
-      <CardActionArea>
+      <CardActionArea onClick={handleClick}>
         <CardMedia
           component="img"
           image="https://source.unsplash.com/random/1000x800"
@@ -34,33 +53,46 @@ function MainCard() {
               justifyContent: "center",
               textAlign: "center",
               fontSize: "clamp(32px, 3rem, 64px)",
+              padding: "1rem",
             }}
-            gutterBottom
             variant="h5"
             component="div"
           >
             Voxion
           </Typography>
-          <Divider variant="middle" sx={{ backgroundColor: "white" }} />
-          <Typography
+          <CardContent
+            ref={contentRef}
             sx={{
-              color: "white",
-              justifyContent: "center",
-              padding: "0.65rem",
+              maxHeight: showDetails ? contentRef.current.scrollHeight : 0,
+              overflow: "hidden",
               textAlign: "center",
-              fontSize: "clamp(14px, 1.5rem, 48px)",
             }}
-            variant="body2"
-            color="text.secondary"
           >
-            A project utilizing OpenAI completions and text-to-speech to imitate
-            chat with audio.
-          </Typography>
-          <Divider variant="middle" sx={{ backgroundColor: "white" }} />
-          <ProjectLink
-            name="BB-Github"
-            href="https://bigolboyyo.github.io/BouncingBalls/"
-          />
+            {showDetails && (
+              <>
+                <Divider variant="middle" sx={{ backgroundColor: "white" }} />
+                <Typography
+                  sx={{
+                    color: "white",
+                    justifyContent: "center",
+                    padding: "1rem",
+                    textAlign: "center",
+                    fontSize: "clamp(14px, 1.5rem, 48px)",
+                  }}
+                  variant="body2"
+                  color="text.secondary"
+                >
+                  A project utilizing OpenAI completions and text-to-speech to
+                  imitate chat with audio.
+                </Typography>
+                <Divider variant="middle" sx={{ backgroundColor: "white" }} />
+                <ProjectLink
+                  name="BB-Github"
+                  href="https://bigolboyyo.github.io/BouncingBalls/"
+                />
+              </>
+            )}
+          </CardContent>
         </CardContent>
       </CardActionArea>
     </Card>

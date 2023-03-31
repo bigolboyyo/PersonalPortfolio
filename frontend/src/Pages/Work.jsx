@@ -6,6 +6,7 @@ import WorkGrid from "../components/WorkGrid";
 
 const Work = () => {
   const workRef = useRef(null);
+  const gridRef = useRef(null);
 
   useEffect(() => {
     animateRouteSwitch(null, workRef.current);
@@ -18,7 +19,7 @@ const Work = () => {
       maxWidth="false"
       sx={{ overflowY: "auto", height: "auto" }}
     >
-      <WorkGrid />
+      <WorkGrid ref={gridRef} />
     </Container>
   );
 };

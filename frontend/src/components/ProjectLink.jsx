@@ -12,7 +12,11 @@ const ProjectLink = ({ name, href }) => {
       rel="noopener noreferrer"
       variant="text"
       color="inherit"
-      sx={{ width: "100%" }}
+      sx={{
+        width: "auto",
+        paddingBottom: "1rem",
+        paddingTop: "1rem",
+      }}
     >
       <Avatar>
         <GitHub />
