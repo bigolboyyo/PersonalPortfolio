@@ -22,11 +22,16 @@ function Root() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setLoaded(true);
+    }, 20000);
+
     window.addEventListener("load", () => {
-      setTimeout(() => {
-        setLoaded(true);
-      }, 3000);
+      clearTimeout(timeoutId);
+      setLoaded(true);
     });
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
@@ -47,9 +52,3 @@ function Root() {
 }
 
 root.render(<Root />);
-
-// import reportWebVitals from "./reportWebVitals";
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
