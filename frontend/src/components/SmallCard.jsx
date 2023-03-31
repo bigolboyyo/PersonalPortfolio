@@ -7,6 +7,7 @@ import {
   Typography,
   Divider,
 } from "@mui/material";
+import ProjectLink from "./ProjectLink";
 
 function SmallCard() {
   return (
@@ -15,8 +16,9 @@ function SmallCard() {
         width: "30vmax",
         maxWidth: 300,
         marginBottom: "2rem",
-        border: "solid white",
         padding: 0,
+        backgroundColor: "transparent",
+        backdropFilter: "blur(7px) contrast(0.6)",
       }}
     >
       <CardActionArea>
@@ -37,6 +39,7 @@ function SmallCard() {
               color: "white",
               justifyContent: "center",
               textAlign: "center",
+              fontSize: "clamp(16px, 1.75rem, 48px)",
             }}
             gutterBottom
             variant="h6"
@@ -48,14 +51,20 @@ function SmallCard() {
           <Typography
             sx={{
               color: "white",
-              paddingTop: "0.35rem",
+              padding: "0.35rem",
               textAlign: "center",
+              fontSize: "clamp(16px, 1.5rem, 36px)",
             }}
             variant="body2"
             color="text.secondary"
           >
             A smaller project that showcases my skills in React and MUI.
           </Typography>
+          <Divider variant="middle" sx={{ backgroundColor: "white" }} />
+          <ProjectLink
+            name="BB-Github"
+            href="https://bigolboyyo.github.io/BouncingBalls/"
+          />
         </CardContent>
       </CardActionArea>
     </Card>

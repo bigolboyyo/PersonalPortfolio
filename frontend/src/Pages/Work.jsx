@@ -12,7 +12,12 @@ const Work = () => {
   }, []);
 
   return (
-    <Container ref={workRef} disableGutters={true} maxWidth="false">
+    <Container
+      ref={workRef}
+      disableGutters={true}
+      maxWidth="false"
+      sx={{ overflowY: "auto", height: "auto" }}
+    >
       <WorkGrid />
     </Container>
   );
