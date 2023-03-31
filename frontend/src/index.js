@@ -24,7 +24,7 @@ function Root() {
   useEffect(() => {
     const timerId = setTimeout(() => {
       setLoaded(true);
-    }, 10000);
+    }, 7000);
 
     const loadHandler = () => {
       clearTimeout(timerId);
@@ -32,11 +32,9 @@ function Root() {
     };
 
     window.addEventListener("load", loadHandler);
-    window.addEventListener("DOMContentLoaded", loadHandler);
 
     return () => {
       window.removeEventListener("load", loadHandler);
-      window.removeEventListener("DOMContentLoaded", loadHandler);
       clearTimeout(timerId);
     };
   }, []);
