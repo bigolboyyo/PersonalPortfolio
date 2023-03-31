@@ -2,17 +2,7 @@ import Home from "../Pages/Home";
 import About from "../Pages/About";
 import Work from "../Pages/Work";
 import Contact from "../Pages/Contact";
-import { Outlet } from "react-router-dom";
-import Header from "../components/Header";
-
-const HeaderLayout = () => {
-  return (
-    <>
-      <Header />
-      <Outlet />
-    </>
-  );
-};
+import HeaderLayout from "../components/HeaderLayout";
 
 const routes = [
   {
