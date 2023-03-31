@@ -25,10 +25,10 @@ CORS(app)
 
 app.debug = True
 
-class ContactForm(FlaskForm):
-    name = StringField('Name', validators=[InputRequired(), Length(min=2, max=128)])
-    email = StringField('Email', validators=[InputRequired(), Email()])
-    message = TextAreaField('Message', validators=[InputRequired(), Length(min=6, max=1000)])
+# class ContactForm(FlaskForm):
+#     name = StringField('Name', validators=[InputRequired(), Length(min=2, max=128)])
+#     email = StringField('Email', validators=[InputRequired(), Email()])
+#     message = TextAreaField('Message', validators=[InputRequired(), Length(min=6, max=1000)])
 
 
 # Define the route for the contact form
