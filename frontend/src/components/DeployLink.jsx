@@ -16,10 +16,14 @@ function DeployLink({ name, href }) {
         width: "auto",
         paddingBottom: "1rem",
         paddingTop: "1rem",
+        // backgroundColor: "black",
+        borderRadius: "25%",
+        border: "solid transparent",
+        backgroundClip: "padding-box",
       }}
     >
       <Tooltip title={name}>
-        <Avatar>
+        <Avatar sx={{ backgroundColor: "#EBB9EA" }}>
           <OpenInBrowserIcon />
         </Avatar>
       </Tooltip>

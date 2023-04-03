@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles";
-import emmaClouds from "../images/clousd.jpg";
+import publicImage from "./publicImage";
 
-const backgroundImage = `url(${emmaClouds})`;
+const backgroundImage = `url(${publicImage("clousd.jpg")})`;
 
 const customComponents = {
   MuiButton: {

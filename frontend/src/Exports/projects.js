@@ -1,9 +1,8 @@
-import BBImage from "../images/BB-display.png";
-import VoxImg from "../images/vox-temp.png";
+import publicImage from "./publicImage";
 
 export const projects = {
   main: {
-    displayImg: VoxImg,
+    displayImg: publicImage("vox-temp.png"),
     title: "Voxion",
     description:
       "An MVP for a speech focused chat bot using OpenAI, designed to provide a more human like conversation experience.",
@@ -14,7 +13,7 @@ export const projects = {
   secondary: {
     projs: [
       {
-        displayImg: BBImage,
+        displayImg: publicImage("BB-display.png"),
         title: "Flatiron Capstone Project",
         description:
           "This was my first take at a full stack application. It's a text adventure game built with React/Rails and utilizes Redux.",
@@ -23,7 +22,7 @@ export const projects = {
         status: "No Longer Deployed",
       },
       {
-        displayImg: BBImage,
+        displayImg: publicImage("icon-loading.png"),
         title: "Bouncing Balls",
         description:
           "An example of using Canvas and JS to demonstrate collision physics.",
@@ -32,7 +31,7 @@ export const projects = {
         status: "Deployed",
       },
       {
-        displayImg: BBImage,
+        displayImg: publicImage("Dots.png"),
         title: "Test ",
         description: "Testing Text Testing Tests",
         deployment: "https://bigolboyyo.github.io/BouncingBalls/",

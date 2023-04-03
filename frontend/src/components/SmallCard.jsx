@@ -91,7 +91,6 @@ function SmallCard({ details }) {
                 >
                   {details.description}
                 </Typography>
-                <Divider variant="middle" sx={{ backgroundColor: "white" }} />
                 <GithubLink
                   name={`${details.title}-repo-link`}
                   href={details.repo}
@@ -102,14 +101,6 @@ function SmallCard({ details }) {
                     href={details.deployment}
                   />
                 ) : null}
-                <Divider
-                  // variant="middle"
-                  sx={{
-                    backgroundColor: "white",
-                    width: "33.3%",
-                    margin: "0 auto",
-                  }}
-                />
                 <Typography
                   sx={{
                     color: "white",

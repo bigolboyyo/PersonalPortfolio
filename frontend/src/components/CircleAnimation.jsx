@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import stars from "../images/Stars.png";
-import dots from "../images/Dots.png";
-
+import publicImage from "../Exports/publicImage";
 import { addClickEventListener } from "../Exports/addClickEventListener";
+
+const stars = publicImage("Stars.png");
+const dots = publicImage("Dots.png");
 
 function CircleAnimation({ circleRef }) {
   const [starOrDot, setStarOrDot] = useState(true);

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import LoadingIcon from "../images/icon-loading.png";
+import publicImage from "../Exports/publicImage";
+const LoadingIcon = publicImage("icon-loading.png");
 
 const Loading = ({ loading, width = "64px" }) => {
   const loadingRef = useRef(null);

@@ -1,10 +1,12 @@
 import { Typography, Card, CardContent } from "@mui/material";
 import React, { useEffect, useRef } from "react";
-import selfie from "../images/self.jpeg";
 
 import SpinningAvatar from "./SpinningAvatar";
 import { animateBubbles } from "../animations/animateBubbles";
 import SpeechBubble from "./SpeechBubble";
+import publicImage from "../Exports/publicImage";
+
+const selfie = publicImage("self.jpeg");
 
 function Introduction() {
   const introRef = useRef(null);

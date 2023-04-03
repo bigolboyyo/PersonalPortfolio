@@ -18,7 +18,7 @@ function WorkGrid() {
           <MainCard details={projects.main} />
         </Box>
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} md={4} sx={{ width: "inherit" }}>
         <Grid container spacing={2} justifyContent="center">
           {projects.secondary.projs.map((proj, index) => (
             <Grid
