@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Avatar } from "@mui/material";
+import { Button, Avatar, Tooltip } from "@mui/material";
 import { GitHub } from "@mui/icons-material";
 
 const GithubLink = ({ name, href }) => {
@@ -18,9 +18,11 @@ const GithubLink = ({ name, href }) => {
         paddingTop: "1rem",
       }}
     >
-      <Avatar>
-        <GitHub />
-      </Avatar>
+      <Tooltip title={name}>
+        <Avatar>
+          <GitHub />
+        </Avatar>
+      </Tooltip>
     </Button>
   );
 };

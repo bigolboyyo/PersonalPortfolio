@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Avatar } from "@mui/material";
+import { Button, Avatar, Tooltip } from "@mui/material";
 import OpenInBrowserIcon from "@mui/icons-material/OpenInBrowser";
 
 function DeployLink({ name, href }) {
@@ -18,9 +18,11 @@ function DeployLink({ name, href }) {
         paddingTop: "1rem",
       }}
     >
-      <Avatar>
-        <OpenInBrowserIcon />
-      </Avatar>
+      <Tooltip title={name}>
+        <Avatar>
+          <OpenInBrowserIcon />
+        </Avatar>
+      </Tooltip>
     </Button>
   );
 }

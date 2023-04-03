@@ -85,7 +85,10 @@ function MainCard({ details }) {
                   {details.description}
                 </Typography>
                 <Divider variant="middle" sx={{ backgroundColor: "white" }} />
-                <GithubLink name={details.title} href={details.repo} />
+                <GithubLink
+                  name={`${details.title}-repo-link`}
+                  href={details.repo}
+                />
                 <Divider
                   // variant="middle"
                   sx={{

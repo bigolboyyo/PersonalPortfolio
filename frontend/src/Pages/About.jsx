@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container, Grid, Box } from "@mui/material";
+import { Container, Grid, Box, Tooltip } from "@mui/material";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
 import { iconConfig } from "../Exports/iconConfig";
 import { animateBubbles } from "../animations/animateBubbles";
 
 const About = () => {
   const [gridHeight, setGridHeight] = useState("");
-  // const [gridWidth, setGridWidth] = useState("");
 
   const aboutRef = useRef(null);
   const gridRef = useRef(null);
@@ -75,21 +74,23 @@ const About = () => {
                 borderRadius: "50%",
               }}
             >
-              <img
-                className="skill-imgs"
-                src={item.icon}
-                alt={item.name}
-                key={item.name + "-svg"}
-                style={{
-                  boxShadow: "12px 12px 12px rgba(0, 0, 0, 0.25)",
-                  border: "6px solid #40AAFE",
-                  borderRadius: "25%",
-                  padding: "0.5rem",
-                  backgroundColor: "#DCDCDC",
-                  maxWidth: "200px",
-                  width: "clamp(64px, 12.5%, 30%)",
-                }}
-              />
+              <Tooltip title={item.name} followCursor enterTouchDelay={0}>
+                <img
+                  className="skill-imgs"
+                  src={item.icon}
+                  alt={item.name}
+                  key={item.name + "-svg"}
+                  style={{
+                    boxShadow: "12px 12px 12px rgba(0, 0, 0, 0.25)",
+                    border: "6px solid #40AAFE",
+                    borderRadius: "25%",
+                    padding: "0.5rem",
+                    backgroundColor: "#DCDCDC",
+                    maxWidth: "200px",
+                    width: "clamp(64px, 12.5%, 30%)",
+                  }}
+                />
+              </Tooltip>
             </div>
           </Grid>
         ))}

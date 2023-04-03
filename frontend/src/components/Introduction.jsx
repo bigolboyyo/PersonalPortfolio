@@ -47,6 +47,7 @@ function Introduction() {
         />
 
         <SpinningAvatar src={selfie} />
+
         <SpeechBubble
           text={
             <Typography variant="p">I design stuff for the web.</Typography>
