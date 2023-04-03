@@ -10,7 +10,7 @@ import {
 import ProjectLink from "./ProjectLink";
 import gsap from "gsap";
 
-function MainCard() {
+function MainCard({ details }) {
   const [showDetails, setShowDetails] = useState(false);
   const contentRef = useRef(null);
 
@@ -43,7 +43,7 @@ function MainCard() {
       <CardActionArea onClick={handleClick}>
         <CardMedia
           component="img"
-          image="https://source.unsplash.com/random/1000x800"
+          image={details.displayImg}
           alt="Voxion project image"
         />
         <CardContent>
@@ -58,7 +58,7 @@ function MainCard() {
             variant="h5"
             component="div"
           >
-            Voxion
+            {details.title}
           </Typography>
           <CardContent
             ref={contentRef}
@@ -82,14 +82,29 @@ function MainCard() {
                   variant="body2"
                   color="text.secondary"
                 >
-                  A project utilizing OpenAI completions and text-to-speech to
-                  imitate chat with audio.
+                  {details.description}
                 </Typography>
                 <Divider variant="middle" sx={{ backgroundColor: "white" }} />
-                <ProjectLink
-                  name="BB-Github"
-                  href="https://bigolboyyo.github.io/BouncingBalls/"
+                <ProjectLink name="BB-Github" href={details.repo} />
+                <Divider
+                  // variant="middle"
+                  sx={{
+                    backgroundColor: "white",
+                    width: "33.3%",
+                    margin: "0 auto",
+                  }}
                 />
+                <Typography
+                  sx={{
+                    color: "white",
+                    justifyContent: "center",
+                    padding: "1rem",
+                    textAlign: "center",
+                    fontSize: "clamp(8px, 0.8rem, 20px)",
+                  }}
+                >
+                  {details.status}
+                </Typography>
               </>
             )}
           </CardContent>

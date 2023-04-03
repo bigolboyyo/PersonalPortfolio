@@ -2,8 +2,10 @@ import React from "react";
 import { Grid, Box } from "@mui/material";
 import MainCard from "./MainCard.jsx";
 import SmallCard from "./SmallCard.jsx";
+import { projects } from "../Exports/projects.js";
 
 function WorkGrid() {
+  console.log(projects);
   return (
     <Grid
       container
@@ -13,12 +15,12 @@ function WorkGrid() {
     >
       <Grid item xs={12} md={8}>
         <Box p={2} sx={{ paddingRight: 0 }}>
-          <MainCard />
+          <MainCard details={projects.main} />
         </Box>
       </Grid>
       <Grid item xs={12} md={4}>
         <Grid container spacing={2} justifyContent="center">
-          {[...Array(6)].map((_, index) => (
+          {projects.secondary.projs.map((proj, index) => (
             <Grid
               key={index}
               item
@@ -30,7 +32,7 @@ function WorkGrid() {
               sx={{ paddingLeft: "16px !important" }}
             >
               <Box p={2} sx={{ paddingRight: 0 }}>
-                <SmallCard />
+                <SmallCard details={proj} />
               </Box>
             </Grid>
           ))}

@@ -8,9 +8,9 @@ import {
   Typography,
 } from "@mui/material";
 import { gsap } from "gsap";
-import ProjectLink from "./ProjectLink";
+import GithubLink from "./ProjectLink";
 
-function SmallCard() {
+function SmallCard({ details }) {
   const [showDetails, setShowDetails] = useState(false);
   const contentRef = useRef(null);
 
@@ -43,7 +43,7 @@ function SmallCard() {
       <CardActionArea onClick={handleClick}>
         <CardMedia
           component="img"
-          image="https://source.unsplash.com/random/400x300"
+          image={details.displayImg}
           alt="Small project image"
           sx={{
             objectFit: "cover",
@@ -65,7 +65,7 @@ function SmallCard() {
             variant="h6"
             component="div"
           >
-            Small Project
+            {details.title}
           </Typography>
           <CardContent
             ref={contentRef}
@@ -88,13 +88,29 @@ function SmallCard() {
                   variant="body2"
                   color="text.secondary"
                 >
-                  A smaller project that showcases my skills in React and MUI.
+                  {details.description}
                 </Typography>
                 <Divider variant="middle" sx={{ backgroundColor: "white" }} />
-                <ProjectLink
-                  name="BB-Github"
-                  href="https://bigolboyyo.github.io/BouncingBalls/"
+                <GithubLink name={details.title} href={details.repo} />
+                <Divider
+                  // variant="middle"
+                  sx={{
+                    backgroundColor: "white",
+                    width: "33.3%",
+                    margin: "0 auto",
+                  }}
                 />
+                <Typography
+                  sx={{
+                    color: "white",
+                    justifyContent: "center",
+                    padding: "1rem",
+                    textAlign: "center",
+                    fontSize: "clamp(8px, 0.8rem, 20px)",
+                  }}
+                >
+                  {details.status}
+                </Typography>
               </>
             )}
           </CardContent>

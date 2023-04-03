@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Avatar } from "@mui/material";
 import { GitHub } from "@mui/icons-material";
 
-const ProjectLink = ({ name, href }) => {
+const GithubLink = ({ name, href }) => {
   return (
     <Button
       key={name}
@@ -25,4 +25,4 @@ const ProjectLink = ({ name, href }) => {
   );
 };
 
-export default ProjectLink;
+export default GithubLink;
