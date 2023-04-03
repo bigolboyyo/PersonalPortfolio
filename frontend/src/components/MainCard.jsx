@@ -7,7 +7,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-import ProjectLink from "./ProjectLink";
+import GithubLink from "./GithubLink";
 import gsap from "gsap";
 
 function MainCard({ details }) {
@@ -85,7 +85,7 @@ function MainCard({ details }) {
                   {details.description}
                 </Typography>
                 <Divider variant="middle" sx={{ backgroundColor: "white" }} />
-                <ProjectLink name="BB-Github" href={details.repo} />
+                <GithubLink name={details.title} href={details.repo} />
                 <Divider
                   // variant="middle"
                   sx={{

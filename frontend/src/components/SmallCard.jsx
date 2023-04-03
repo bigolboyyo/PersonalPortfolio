@@ -8,7 +8,8 @@ import {
   Typography,
 } from "@mui/material";
 import { gsap } from "gsap";
-import GithubLink from "./ProjectLink";
+import GithubLink from "./GithubLink";
+import DeployLink from "./DeployLink";
 
 function SmallCard({ details }) {
   const [showDetails, setShowDetails] = useState(false);
@@ -91,7 +92,16 @@ function SmallCard({ details }) {
                   {details.description}
                 </Typography>
                 <Divider variant="middle" sx={{ backgroundColor: "white" }} />
-                <GithubLink name={details.title} href={details.repo} />
+                <GithubLink
+                  name={`${details.title}-repo-link`}
+                  href={details.repo}
+                />
+                {details.deployment ? (
+                  <DeployLink
+                    name={`${details.title}-deploy-link`}
+                    href={details.deployment}
+                  />
+                ) : null}
                 <Divider
                   // variant="middle"
                   sx={{
