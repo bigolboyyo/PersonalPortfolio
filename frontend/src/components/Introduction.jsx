@@ -25,9 +25,7 @@ function Introduction() {
         maxWidth: "100%",
         justifyContent: "center",
         height: "100%",
-
         backgroundColor: "transparent",
-        // backdropFilter: "blur(3px)",
       }}
     >
       <CardContent

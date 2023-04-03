@@ -13,7 +13,7 @@ export const projects = {
   secondary: {
     projs: [
       {
-        displayImg: publicImage("BB-display.png"),
+        displayImg: publicImage("icon-loading.png"),
         title: "Flatiron Capstone Project",
         description:
           "This was my first take at a full stack application. It's a text adventure game built with React/Rails and utilizes Redux.",
@@ -22,7 +22,7 @@ export const projects = {
         status: "No Longer Deployed",
       },
       {
-        displayImg: publicImage("icon-loading.png"),
+        displayImg: publicImage("BB-display.png"),
         title: "Bouncing Balls",
         description:
           "An example of using Canvas and JS to demonstrate collision physics.",
