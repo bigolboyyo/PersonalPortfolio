@@ -9,6 +9,7 @@ const SpeechBubble = ({
   trianglePosition = "south",
   flexAlign = "center",
   minWidth = "20vw",
+  maxWidth = "60vw",
 }) => {
   const speechBubbleRef = useRef(null);
 
@@ -23,11 +24,11 @@ const SpeechBubble = ({
         position: "relative",
         textAlign: "center",
         backgroundColor: "#F5FEFD",
-        border: "solid #40AAFE 4px",
+        // border: "solid #40AAFE 4px",
         borderRadius: "20px",
-        padding: "0.35rem",
+        padding: "0.45rem",
         minWidth: minWidth,
-        maxWidth: "60vw",
+        maxWidth: maxWidth,
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",

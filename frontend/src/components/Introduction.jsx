@@ -24,8 +24,8 @@ function Introduction() {
         width: "100%",
         maxWidth: "100%",
         justifyContent: "center",
-        height: "100%",
         backgroundColor: "transparent",
+        padding: "1rem",
       }}
     >
       <CardContent
@@ -33,9 +33,9 @@ function Introduction() {
           gap: "clamp(1.25rem, 1.5rem, 2.5%)",
           display: "flex",
           flexDirection: "column",
-          height: "92.5vh",
           justifyContent: "center",
           width: "clamp(60%, 60vmax, 80%)",
+          height: "calc(100vh - 64px)",
         }}
       >
         <SpeechBubble
