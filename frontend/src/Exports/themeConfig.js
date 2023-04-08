@@ -26,10 +26,11 @@ const customComponents = {
         letterSpacing: "2px",
         WebkitTextStroke: "2px #000",
         fontFamily: "Freckle Face",
+        fontSize: "clamp(1.3rem, 3.7vmax, 4rem)",
       },
       p: {
         color: "#EBB9EA",
-        fontSize: "clamp(1.5rem, 4vmax, 5rem)",
+        fontSize: "clamp(2rem, 2.7vmax, 4rem)",
         WebkitTextStroke: "2px #000",
         fontFamily: "Freckle Face",
         textShadow: "2px 4px black",
@@ -39,7 +40,7 @@ const customComponents = {
   MuiContainer: {
     styleOverrides: {
       root: {
-        // height: `400vh`,
+        // height: `300%`,
         margin: 0,
         padding: "0.35rem",
         backgroundColor: "#000",

@@ -5,7 +5,6 @@ import SmallCard from "./SmallCard.jsx";
 import { projects } from "../Exports/projects.js";
 
 function WorkGrid() {
-  console.log(projects);
   return (
     <Grid
       container

@@ -1,17 +1,10 @@
-// const bkgImages = [
-//   `url(${publicImage("CloudsBlack.png")})`,
-//   `url(${publicImage("IsolatedClouds.png")})`,
-//   `url(${publicImage("Stars.png")})`,
-//   `url(${publicImage("Dots.png")})`,
-// ];
-// import publicImage from "../Exports/publicImage";
-
 import React, { useEffect, useRef } from "react";
 import { Container } from "@mui/material";
 import Introduction from "../components/Introduction";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
 import CircleAnimation from "../components/CircleAnimation";
 import { mouseClickAnimation } from "../animations/mouseClickAnimation";
+import PartOne from "../components/PartOne";
 import PartTwo from "../components/PartTwo";
 import AboutMe from "../components/AboutMe";
 
@@ -41,6 +34,7 @@ const Home = () => {
       <CircleAnimation circleRef={circleRef} />
       <Introduction />
       <AboutMe />
+      <PartOne />
       <PartTwo />
     </Container>
   );

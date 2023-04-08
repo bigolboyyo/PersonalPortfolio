@@ -11,6 +11,7 @@ const ThreeDBox = ({
   text = lorem,
   rotX = 30,
   rotY = 30,
+  position = "unset",
 }) => {
   const boxRef = useRef(null);
 
@@ -58,6 +59,7 @@ const ThreeDBox = ({
         backdropFilter: "blur(7px) contrast(0.6)",
         textAlign: "center",
         overflowY: "auto",
+        position: position,
       }}
     >
       <Typography variant="p">{text}</Typography>

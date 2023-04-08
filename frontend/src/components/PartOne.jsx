@@ -7,7 +7,7 @@ import { getCanvasString } from "../Exports/getCanvasString";
 
 import RevealButton from "./RevealButton";
 
-function PartTwo() {
+function PartOne() {
   const [showCode, setShowCode] = useState(false);
   const canvasRef = useRef(null);
   const codeTop = canvasRef.current ? canvasRef.current.offsetTop : 0;
@@ -20,7 +20,7 @@ function PartTwo() {
         justifyContent: "center",
         backgroundColor: "transparent",
         padding: "1rem",
-        height: "calc(100vh + 64px)",
+        height: "75vh",
         width: "100%",
       }}
     >
@@ -37,7 +37,7 @@ function PartTwo() {
         <SpeechBubble
           text={
             <Typography variant="p">
-              Now imagine all of the things we could accomplish together.
+              A few lines of code and I could do such wonderful things.
             </Typography>
           }
           trianglePosition="south"
@@ -58,4 +58,4 @@ function PartTwo() {
   );
 }
 
-export default PartTwo;
+export default PartOne;
