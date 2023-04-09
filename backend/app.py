@@ -7,9 +7,9 @@ import pdb
 # Flask
 from flask import Flask, request, jsonify, redirect, session
 from flask_cors import CORS, cross_origin
-from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField
-from wtforms.validators import InputRequired, Email, Length
+# from flask_wtf import FlaskForm
+# from wtforms import StringField, TextAreaField
+# from wtforms.validators import InputRequired, Email, Length
 
 # SendGrid
 from sendgrid import SendGridAPIClient

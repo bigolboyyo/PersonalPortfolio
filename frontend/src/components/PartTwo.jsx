@@ -52,7 +52,7 @@ function PartTwo() {
         ) : (
           <RevealButton showCode={showCode} setShowCode={setShowCode} />
         )}
-        <Canvas ref={canvasRef} />
+        <Canvas ref={canvasRef} edit={true} />
       </CardContent>
     </Card>
   );

@@ -17,7 +17,6 @@ function AboutMe() {
       <ThreeDBox
         width={"fit-content"}
         maxWidth={"60%"}
-        // position={""}
         rotX={180}
         text={
           <Typography ref={textRef} variant="h1">
