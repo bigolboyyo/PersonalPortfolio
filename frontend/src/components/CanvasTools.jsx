@@ -8,6 +8,11 @@ function CanvasTools({ setVx, setVy, setRotationSpeed, image, setImage }) {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-around",
+        backgroundColor: "transparent",
+        backdropFilter: "blur(7px) contrast(0.6)",
+        padding: "0.35rem",
+        outline: "solid transparent",
+        borderRadius: "20px",
       }}
     >
       <ButtonGroup
