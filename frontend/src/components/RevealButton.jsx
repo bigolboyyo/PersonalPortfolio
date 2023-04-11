@@ -3,9 +3,13 @@ import { Button } from "@mui/material";
 
 function RevealButton({ setShowCode, showCode }) {
   return showCode ? (
-    <Button onClick={() => setShowCode(false)}>Hide Code</Button>
+    <Button variant="code" onClick={() => setShowCode(false)}>
+      Hide Code
+    </Button>
   ) : (
-    <Button onClick={() => setShowCode(true)}>Show Code</Button>
+    <Button variant="code" onClick={() => setShowCode(true)}>
+      Show Code
+    </Button>
   );
 }
 

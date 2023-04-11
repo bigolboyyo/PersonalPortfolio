@@ -7,6 +7,41 @@ const customComponents = {
   MuiButton: {
     styleOverrides: {
       root: {},
+      toolbar: {
+        fontSize: "clamp(0.75rem, 1.5vw, 4rem)",
+        color: "#40AAFE",
+      },
+      code: {
+        background: "transparent",
+        backdropFilter: "blur(7px) contrast(0.6)",
+        width: "max-content",
+        alignSelf: "center",
+        color: "#40AAFE",
+        fontSize: "clamp(0.75rem, 1.5vw, 4rem)",
+      },
+    },
+    variants: [
+      {
+        props: { variant: "toolbar" },
+      },
+      {
+        props: { variant: "code" },
+      },
+    ],
+  },
+  MuiInputBase: {
+    styleOverrides: {
+      root: {
+        fontSize: "clamp(0.75rem, 1.5vw, 4rem)",
+      },
+    },
+  },
+  MuiMenuItem: {
+    styleOverrides: {
+      root: {
+        fontSize: "clamp(0.75rem, 1.5vw, 4rem)",
+        color: "#40AAFE",
+      },
     },
   },
   MuiLink: {
@@ -26,11 +61,11 @@ const customComponents = {
         letterSpacing: "2px",
         WebkitTextStroke: "2px #000",
         fontFamily: "Freckle Face",
-        fontSize: "clamp(1.3rem, 3.7vmax, 4rem)",
+        fontSize: "clamp(1.8rem, 3.7vmax, 4.2rem)",
       },
       p: {
         color: "#EBB9EA",
-        fontSize: "clamp(2rem, 2.7vmax, 4rem)",
+        fontSize: "clamp(1.8rem, 2.7vmax, 4rem)",
         WebkitTextStroke: "2px #000",
         fontFamily: "Freckle Face",
         textShadow: "2px 4px black",
@@ -40,7 +75,6 @@ const customComponents = {
   MuiContainer: {
     styleOverrides: {
       root: {
-        // height: `300%`,
         margin: 0,
         padding: "0.35rem",
         backgroundColor: "#000",

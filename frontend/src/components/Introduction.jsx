@@ -1,5 +1,5 @@
 import { Typography, Card, CardContent } from "@mui/material";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, forwardRef } from "react";
 
 import SpinningAvatar from "./SpinningAvatar";
 import { animateBubbles } from "../animations/animateBubbles";
@@ -8,24 +8,26 @@ import publicImage from "../Exports/publicImage";
 
 const selfie = publicImage("self.jpeg");
 
-function Introduction() {
-  const introRef = useRef(null);
-
+const Introduction = forwardRef((props, ref) => {
   useEffect(() => {
-    animateBubbles(introRef.current, true);
+    animateBubbles(ref.current, true);
+    // eslint-disable-next-line
   }, []);
 
   return (
     <Card
-      ref={introRef}
+      ref={ref}
       sx={{
         boxShadow: "none",
         marginTop: 0,
-        width: "100%",
-        maxWidth: "100%",
+        // width: "100vw",
         justifyContent: "center",
         backgroundColor: "transparent",
         padding: "1rem",
+        // height: "100vh",
+        minHeight: "100vh",
+        height: "100vh",
+        // marginBottom: "100vh",
       }}
     >
       <CardContent
@@ -40,7 +42,14 @@ function Introduction() {
       >
         <SpeechBubble
           text={
-            <Typography variant="p">Hello, My name is Wesley Grant!</Typography>
+            <Typography
+              sx={{
+                fontSize: "clamp(2.1rem, 2.7vmax, 4rem)",
+              }}
+              variant="p"
+            >
+              Hello, My name is Wesley Grant!
+            </Typography>
           }
           trianglePosition="south"
           flexAlign="flex-start"
@@ -50,7 +59,14 @@ function Introduction() {
 
         <SpeechBubble
           text={
-            <Typography variant="p">I design stuff for the web.</Typography>
+            <Typography
+              sx={{
+                fontSize: "clamp(2.1rem, 2.7vmax, 4rem)",
+              }}
+              variant="p"
+            >
+              I design stuff for the web.
+            </Typography>
           }
           trianglePosition="north"
           flexAlign="flex-end"
@@ -58,6 +74,6 @@ function Introduction() {
       </CardContent>
     </Card>
   );
-}
+});
 
 export default Introduction;

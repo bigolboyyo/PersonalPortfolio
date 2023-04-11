@@ -1,4 +1,10 @@
-export const getCanvasString = (vx = 1, vy = 1, rotationSpeed = 0.01) => {
+export const getCanvasString = (
+  vx = 1,
+  vy = 1,
+  rotationSpeed = 0.01,
+  image = "ufo",
+  radius = 40
+) => {
   const imageStringed = `/**
   * Animates an object bouncing off the canvas walls and rotating.
   * @param {CanvasRenderingContext2D} ctx - The context of the canvas to draw on.
@@ -9,7 +15,7 @@ export const getCanvasString = (vx = 1, vy = 1, rotationSpeed = 0.01) => {
  export const animateImage = (ctx, canvas, image) => {
    let x = canvas.width / 2; 
    let y = canvas.height / 2; 
-   let radius = 40; 
+   let radius = ${radius}; 
    let vx = ${vx}; 
    let vy = ${vy}; 
    let rotation = 0; 
@@ -21,7 +27,7 @@ export const getCanvasString = (vx = 1, vy = 1, rotationSpeed = 0.01) => {
      ctx.save(); 
      ctx.translate(x, y); 
      ctx.rotate(rotation); 
-     ctx.drawImage(image, -radius, -radius, radius * 2, radius * 2); 
+     ctx.drawImage(${image}, -radius, -radius, radius * 2, radius * 2); 
      ctx.restore(); 
  
      rotation += rotationSpeed;

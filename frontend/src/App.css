@@ -12,9 +12,11 @@ body {
 html,
 body,
 #root {
-  height: 100%;
-  width: 100%;
   background: linear-gradient(to bottom, #ebb9ea, #40aafe);
+}
+
+html,
+body {
   overflow-x: hidden;
 }
 

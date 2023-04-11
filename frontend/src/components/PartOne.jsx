@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, forwardRef, useRef } from "react";
 import { Card, CardContent, Typography } from "@mui/material";
 import SpeechBubble from "./SpeechBubble";
 import Canvas from "./Canvas";
@@ -7,21 +7,27 @@ import { getCanvasString } from "../Exports/getCanvasString";
 
 import RevealButton from "./RevealButton";
 
-function PartOne() {
+const PartOne = forwardRef((props, ref) => {
   const [showCode, setShowCode] = useState(false);
-  const canvasRef = useRef(null);
-  const codeTop = canvasRef.current ? canvasRef.current.offsetTop : 0;
+  // const canvasRef = useRef(null);
+  const codeTop = ref.current ? ref.current.offsetTop : 0;
+
+  const partOneRef = useRef(null);
 
   return (
     <Card
+      ref={ref}
       sx={{
         boxShadow: "none",
         marginTop: 0,
         justifyContent: "center",
         backgroundColor: "transparent",
         padding: "1rem",
-        height: "75vh",
         width: "100%",
+        overflowY: "auto",
+        height: "100vh",
+        minHeight: "100vh",
+        // marginBottom: "100vh",
       }}
     >
       <CardContent
@@ -52,10 +58,10 @@ function PartOne() {
         ) : (
           <RevealButton showCode={showCode} setShowCode={setShowCode} />
         )}
-        <Canvas ref={canvasRef} />
+        <Canvas ref={partOneRef} edit={false} />
       </CardContent>
     </Card>
   );
-}
+});
 
 export default PartOne;
