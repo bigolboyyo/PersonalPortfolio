@@ -25,8 +25,10 @@ const Introduction = forwardRef((props, ref) => {
         backgroundColor: "transparent",
         padding: "1rem",
         // height: "100vh",
-        minHeight: "100vh",
+        // minHeight: "100vh",
         height: "100vh",
+        // scrollSnapAlign: "start",
+        // scrollSnapStop: "always",
         // marginBottom: "100vh",
       }}
     >

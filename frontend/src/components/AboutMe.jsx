@@ -18,8 +18,10 @@ const AboutMe = forwardRef((props, ref) => {
     <Box
       ref={ref}
       sx={{
-        minHeight: "100vh",
-        height: "100vh",
+        // minHeight: "100vh",
+        height: "90vh",
+        // scrollSnapAlign: "start",
+        // scrollSnapStop: "always",
         // marginBottom: "100vh"
       }}
     >

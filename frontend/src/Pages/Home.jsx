@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { Container } from "@mui/material";
 import Introduction from "../components/Introduction";
-// import { animateRouteSwitch } from "../animations/animateRouteSwitch";
-// import CircleAnimation from "../components/CircleAnimation";
-// import { mouseClickAnimation } from "../animations/mouseClickAnimation";
+import { animateRouteSwitch } from "../animations/animateRouteSwitch";
+import CircleAnimation from "../components/CircleAnimation";
+import { mouseClickAnimation } from "../animations/mouseClickAnimation";
 import PartOne from "../components/PartOne";
 import PartTwo from "../components/PartTwo";
 import AboutMe from "../components/AboutMe";
@@ -15,50 +15,38 @@ import { ScrollToPlugin } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
-// const circleRef = useRef(null);
-// animateRouteSwitch(null, homeRef.current);
 const Home = () => {
-  const homeRef = useRef(null);
+  const circleRef = useRef(null);
+
+  const scrollContainerRef = useRef(null);
   const introRef = useRef(null);
   const aboutMeRef = useRef(null);
   const partOneRef = useRef(null);
   const partTwoRef = useRef(null);
 
-  const sections = [introRef, aboutMeRef, partOneRef, partTwoRef];
+  useEffect(() => {
+    animateRouteSwitch(null, scrollContainerRef.current);
+  }, []);
 
   useEffect(() => {
-    sections.forEach((section, index) => {
-      let start = "bottom-=1 top";
-      let end = "bottom top";
+    const sections = [introRef, aboutMeRef, partOneRef, partTwoRef];
 
-      if (index === 0) {
-        start = "top top";
-        end = "bottom top";
-      } else if (index === sections.length - 1) {
-        start = `bottom-${sections.length - 2} top`;
-        end = "bottom bottom";
-      }
-
+    gsap.utils.toArray(sections).forEach((section, index) => {
       ScrollTrigger.create({
-        markers: true,
         trigger: section.current,
-        start: start,
-        end: end,
+        start: "top center",
+        end: "bottom bottom",
         snap: {
-          snapTo: { y: section.current.offsetTop },
-          duration: 0.1,
-          centerVertical: true,
-          snapAlign: "center",
+          snapTo: 1 / (sections.length - 1),
+          duration: 0.2,
+          // delay: 0.1,
+          ease: "power1.out",
         },
-      });
-
-      ScrollTrigger.create({
-        trigger: section.current,
         onEnter: () => {
-          gsap.to(window, {
-            duration: 0.5,
-            scrollTo: section.current,
-          });
+          console.log("scrolling to section", index);
+        },
+        onEnterBack: () => {
+          console.log("scrolling to section", index);
         },
       });
     });
@@ -66,7 +54,7 @@ const Home = () => {
 
   return (
     <Container
-      ref={homeRef}
+      ref={scrollContainerRef}
       disableGutters
       maxWidth="false"
       sx={{
@@ -74,12 +62,14 @@ const Home = () => {
         display: "flex",
         flexDirection: "column",
         minHeight: "400vh",
-        gap: "25vh",
+        overflowY: "scroll",
         scrollSnapType: "y mandatory",
       }}
-      // onClick={(e) => mouseClickAnimation(e, circleRef.current, homeRef)}
+      onClick={(e) =>
+        mouseClickAnimation(e, circleRef.current, scrollContainerRef)
+      }
     >
-      {/* <CircleAnimation circleRef={circleRef} /> */}
+      <CircleAnimation circleRef={circleRef} />
       <Introduction ref={introRef} />
       <AboutMe ref={aboutMeRef} />
       <PartOne ref={partOneRef} />

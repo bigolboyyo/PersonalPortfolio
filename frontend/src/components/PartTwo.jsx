@@ -35,7 +35,9 @@ const PartTwo = forwardRef((props, ref) => {
         width: "100%",
         overflowY: "auto",
         height: "100vh",
-        minHeight: "100vh",
+        // minHeight: "100vh",
+        // scrollSnapAlign: "start",
+        // scrollSnapStop: "always",
       }}
     >
       <CardContent
