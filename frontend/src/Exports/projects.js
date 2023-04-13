@@ -19,7 +19,7 @@ export const projects = {
           "This was my first take at a full stack application. It's a text adventure game built with React/Rails and utilizes Redux.",
         deployment: false,
         repo: "https://github.com/bigolboyyo/capstone-proj-flatiron",
-        status: "No Longer Deployed",
+        status: "Not Currently Deployed",
       },
       {
         displayImg: publicImage("BB-display.png"),
@@ -32,7 +32,7 @@ export const projects = {
       },
       {
         displayImg: publicImage("Dots.png"),
-        title: "Test ",
+        title: "Endless Scroller",
         description: "Testing Text Testing Tests",
         deployment: "https://bigolboyyo.github.io/BouncingBalls/",
         repo: "https://github.com/bigolboyyo/BouncingBalls",
