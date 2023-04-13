@@ -16,6 +16,7 @@ const Canvas = forwardRef(
       setVx,
       setVy,
       setRotationSpeed,
+      setToolbarHeight,
     },
     ref
   ) => {
@@ -48,12 +49,14 @@ const Canvas = forwardRef(
                 background: "transparent",
                 backdropFilter: "contrast(0.6)",
                 borderRadius: "20px",
+                position: "relative",
               }}
             />
             <CanvasTools
               setVx={setVx}
               setVy={setVy}
               setRotationSpeed={setRotationSpeed}
+              setToolbarHeight={setToolbarHeight}
               image={image}
               setImage={setImage}
             />
@@ -69,6 +72,7 @@ const Canvas = forwardRef(
               background: "transparent",
               backdropFilter: "contrast(0.6)",
               borderRadius: "20px",
+              position: "relative",
             }}
           />
         )}

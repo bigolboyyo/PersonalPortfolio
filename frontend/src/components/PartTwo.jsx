@@ -13,15 +13,18 @@ const PartTwo = forwardRef((props, ref) => {
   const [vY, setVy] = useState(1);
   const [rotationSpeed, setRotationSpeed] = useState(0.01);
   const [liveCode, setLiveCode] = useState(getCanvasString());
+  const [canvasTop, setCanvasTop] = useState(0);
 
-  // const canvasRef = useRef(null);
-
-  const codeTop = ref.current ? ref.current.offsetTop : 0;
   const partTwoRef = useRef(null);
 
   useEffect(() => {
     setLiveCode(getCanvasString(vX, vY, rotationSpeed, image));
   }, [vX, vY, rotationSpeed, image]);
+
+  useEffect(() => {
+    const canvasRect = partTwoRef.current.getBoundingClientRect();
+    setCanvasTop(canvasRect.top);
+  }, []);
 
   return (
     <Card
@@ -35,9 +38,7 @@ const PartTwo = forwardRef((props, ref) => {
         width: "100%",
         overflowY: "auto",
         height: "100vh",
-        // minHeight: "100vh",
-        // scrollSnapAlign: "start",
-        // scrollSnapStop: "always",
+        paddingTop: "15vh",
       }}
     >
       <CardContent
@@ -62,7 +63,7 @@ const PartTwo = forwardRef((props, ref) => {
         {showCode ? (
           <>
             <RevealButton showCode={showCode} setShowCode={setShowCode} />
-            <Code height={"40vh"} canvasTop={codeTop}>
+            <Code height={"40vh"} canvasTop={canvasTop}>
               {liveCode}
             </Code>
           </>

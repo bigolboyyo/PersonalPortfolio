@@ -18,11 +18,9 @@ const AboutMe = forwardRef((props, ref) => {
     <Box
       ref={ref}
       sx={{
-        // minHeight: "100vh",
         height: "90vh",
         // scrollSnapAlign: "start",
         // scrollSnapStop: "always",
-        // marginBottom: "100vh"
       }}
     >
       <ThreeDBox
@@ -35,7 +33,7 @@ const AboutMe = forwardRef((props, ref) => {
           </Typography>
         }
       />
-      <Box sx={{ height: "60vh", overflowX: "auto" }}>
+      <Box sx={{ height: "72.5vh", overflowX: "auto" }}>
         <Box>
           <ThreeDBox
             maxWidth={"80vw"}

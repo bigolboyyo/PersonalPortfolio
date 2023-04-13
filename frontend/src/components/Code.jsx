@@ -1,6 +1,12 @@
 import { Typography } from "@mui/material";
 
-const Code = ({ children, canvasTop, height = "auto" }) => (
+const Code = ({
+  children,
+  canvasTop,
+  toolbarHeight,
+  height = "auto",
+  subtractToolbar = false,
+}) => (
   <Typography
     component="code"
     sx={{
@@ -15,16 +21,13 @@ const Code = ({ children, canvasTop, height = "auto" }) => (
       whiteSpace: "pre-wrap",
       wordWrap: "break-word",
       background: "black",
-      position: "absolute",
-      top: canvasTop,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      zIndex: 1,
+      position: "fixed",
+      zIndex: 100,
       overflow: "auto",
       width: "fit-content",
-      margin: "0 auto",
       height: height,
+      top: `calc(${canvasTop}px - 32px)`,
+      left: 0,
     }}
   >
     {children}

@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useRef } from "react";
+import React, { useState, forwardRef, useRef, useEffect } from "react";
 import { Card, CardContent, Typography } from "@mui/material";
 import SpeechBubble from "./SpeechBubble";
 import Canvas from "./Canvas";
@@ -9,10 +9,13 @@ import RevealButton from "./RevealButton";
 
 const PartOne = forwardRef((props, ref) => {
   const [showCode, setShowCode] = useState(false);
-  // const canvasRef = useRef(null);
-  const codeTop = ref.current ? ref.current.offsetTop : 0;
-
+  const [canvasTop, setCanvasTop] = useState(0);
   const partOneRef = useRef(null);
+
+  useEffect(() => {
+    const canvasRect = partOneRef.current.getBoundingClientRect();
+    setCanvasTop(canvasRect.top);
+  }, []);
 
   return (
     <Card
@@ -26,10 +29,7 @@ const PartOne = forwardRef((props, ref) => {
         width: "100%",
         overflowY: "auto",
         height: "100vh",
-        // minHeight: "100vh",
-        // scrollSnapAlign: "start",
-        // scrollSnapStop: "always",
-        // marginBottom: "100vh",
+        paddingTop: "64px",
       }}
     >
       <CardContent
@@ -53,7 +53,7 @@ const PartOne = forwardRef((props, ref) => {
         {showCode ? (
           <>
             <RevealButton showCode={showCode} setShowCode={setShowCode} />
-            <Code height={"40vh"} canvasTop={codeTop}>
+            <Code height={"40vh"} canvasTop={canvasTop}>
               {getCanvasString()}
             </Code>
           </>

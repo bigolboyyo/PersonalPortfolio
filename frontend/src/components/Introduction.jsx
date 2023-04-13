@@ -20,16 +20,13 @@ const Introduction = forwardRef((props, ref) => {
       sx={{
         boxShadow: "none",
         marginTop: 0,
-        // width: "100vw",
+        width: "100%",
         justifyContent: "center",
         backgroundColor: "transparent",
         padding: "1rem",
-        // height: "100vh",
-        // minHeight: "100vh",
         height: "100vh",
         // scrollSnapAlign: "start",
         // scrollSnapStop: "always",
-        // marginBottom: "100vh",
       }}
     >
       <CardContent

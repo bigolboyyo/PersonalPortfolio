@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Box,
   Button,
@@ -8,9 +8,19 @@ import {
   Divider,
 } from "@mui/material";
 
-function CanvasTools({ setVx, setVy, setRotationSpeed, image, setImage }) {
+function CanvasTools({
+  setVx,
+  setVy,
+  setRotationSpeed,
+  image,
+  setImage,
+  setToolbarHeight,
+}) {
+  const toolbarRef = useRef(null);
+
   return (
     <Box
+      ref={toolbarRef}
       sx={{
         display: "flex",
         flexDirection: "column",
