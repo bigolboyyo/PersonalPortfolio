@@ -73,7 +73,7 @@ const Home = () => {
         flexDirection: "column",
         minHeight: "100vh",
         overflowY: "hidden",
-        gap: "50vh",
+        gap: "15vh",
         scrollPaddingTop: "25vh",
         scrollPaddingBottom: "25vh",
       }}

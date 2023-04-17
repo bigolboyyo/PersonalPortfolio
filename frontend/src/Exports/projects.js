@@ -13,29 +13,48 @@ export const projects = {
   secondary: {
     projs: [
       {
-        displayImg: publicImage("icon-loading.png"),
-        title: "Flatiron Capstone Project",
+        displayImg: publicImage("robotext.png"),
+        title: "Text Adventure",
         description:
-          "This was my first take at a full stack application. It's a text adventure game built with React/Rails and utilizes Redux.",
+          "Developed as my Flatiron capstone project. A text adventure game built with React/Rails and utilizes Redux.",
         deployment: false,
         repo: "https://github.com/bigolboyyo/capstone-proj-flatiron",
-        status: "Not Currently Deployed",
+        status: "Not Deployed",
       },
       {
         displayImg: publicImage("BB-display.png"),
-        title: "Bouncing Balls",
+        title: "Screensaver",
         description:
-          "An example of using Canvas and JS to demonstrate collision physics.",
+          "Experimenting with Canvas and JS to create a simple screensaver.",
         deployment: "https://bigolboyyo.github.io/BouncingBalls/",
         repo: "https://github.com/bigolboyyo/BouncingBalls",
         status: "Deployed",
       },
       {
-        displayImg: publicImage("Dots.png"),
-        title: "Endless Scroller",
-        description: "Testing Text Testing Tests",
-        deployment: "https://bigolboyyo.github.io/BouncingBalls/",
-        repo: "https://github.com/bigolboyyo/BouncingBalls",
+        displayImg: publicImage("beerlien.png"),
+        title: "Recipe App",
+        description:
+          "Utilizing the Punk Beer api to create a beer recipe app with JS.",
+        deployment: "https://bigolboyyo.github.io/PunkBeer/",
+        repo: "https://github.com/bigolboyyo/PunkBeer",
+        status: "Deployed",
+      },
+      {
+        displayImg: publicImage("lifeis.png"),
+        title: "Youtube Search",
+        description:
+          "Youtube search clone utiling YT api and implementing pagination.",
+        deployment: false,
+        repo: "https://github.com/bigolboyyo/YoutubeSearch",
+        status: "Deployed",
+      },
+      {
+        displayImg: publicImage("img-brd-icon.png"),
+        title: "Image Board",
+        description:
+          "A personal image board with file reading, using traditional grid methods.",
+        deployment: false,
+        repo: "https://github.com/bigolboyyo/Gridscroller",
         status: "Deployed",
       },
     ],

@@ -16,7 +16,7 @@ const Work = () => {
       ref={workRef}
       disableGutters={true}
       maxWidth="false"
-      sx={{ overflowY: "auto" }}
+      sx={{ overflowY: "auto", height: "100vh" }}
     >
       <WorkGrid />
     </Container>
