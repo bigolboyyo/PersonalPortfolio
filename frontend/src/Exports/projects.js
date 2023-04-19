@@ -44,7 +44,7 @@ export const projects = {
         title: "Youtube Search",
         description:
           "Youtube search clone utiling YT api and implementing pagination.",
-        deployment: false,
+        deployment: "https://bigolboyyo.github.io/YoutubeSearch/",
         repo: "https://github.com/bigolboyyo/YoutubeSearch",
         status: "Deployed",
       },
@@ -53,7 +53,7 @@ export const projects = {
         title: "Image Board",
         description:
           "A personal image board with file reading, using traditional grid methods.",
-        deployment: false,
+        deployment: "https://bigolboyyo.github.io/ImageBoard/",
         repo: "https://github.com/bigolboyyo/Gridscroller",
         status: "Deployed",
       },
