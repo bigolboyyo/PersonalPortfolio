@@ -9,5 +9,8 @@
     "start": "npm run start:frontend & npm run start:backend",
     "start:frontend": "cd frontend && npm start",
     "start:backend": "cd backend && flask run --port 5001"
+  },
+  "dependencies": {
+    "@fontsource/rubik-bubbles": "^4.5.4"
   }
 }
