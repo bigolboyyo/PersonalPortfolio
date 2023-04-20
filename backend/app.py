@@ -52,5 +52,6 @@ def contact():
         error_msg = {'An error occurred during email composition. Please try again later.'}
         return jsonify({'message': list(error_msg)}), 500
 
+
 if __name__ == '__main__':
     app.run()
