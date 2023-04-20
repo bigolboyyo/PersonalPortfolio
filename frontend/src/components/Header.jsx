@@ -4,6 +4,7 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
 import { useLocation } from "react-router-dom";
 import { getPageName } from "../Exports/getPageName";
+import SiteIcon from "./SiteIcon";
 import NavList from "./NavList";
 
 export default function Header() {
@@ -14,6 +15,7 @@ export default function Header() {
   const pageName = getPageName(routeName);
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     animateRouteSwitch(null, headerRef.current);
@@ -30,7 +32,16 @@ export default function Header() {
   };
 
   return (
-    <AppBar ref={headerRef} position="sticky">
+    <AppBar
+      ref={headerRef}
+      position="sticky"
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
       <Toolbar>
         <IconButton
           edge="start"
@@ -45,6 +56,7 @@ export default function Header() {
       <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)}>
         {<NavList toggleDrawer={toggleDrawer} />}
       </Drawer>
+      <SiteIcon message={message} setMessage={setMessage} />
     </AppBar>
   );
 }

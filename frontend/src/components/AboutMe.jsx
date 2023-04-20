@@ -25,7 +25,7 @@ const AboutMe = forwardRef((props, ref) => {
     >
       <ThreeDBox
         width={"fit-content"}
-        maxWidth={"60%"}
+        maxWidth={"100%"}
         rotX={180}
         text={
           <Typography ref={textRef} variant="h1">

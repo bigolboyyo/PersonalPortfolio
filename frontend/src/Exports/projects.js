@@ -22,15 +22,6 @@ export const projects = {
         status: "Not Deployed",
       },
       {
-        displayImg: publicImage("BB-display.png"),
-        title: "Screensaver",
-        description:
-          "Experimenting with Canvas and JS to create a simple screensaver.",
-        deployment: "https://bigolboyyo.github.io/BouncingBalls/",
-        repo: "https://github.com/bigolboyyo/BouncingBalls",
-        status: "Deployed",
-      },
-      {
         displayImg: publicImage("beerlien.png"),
         title: "Recipe App",
         description:
@@ -55,6 +46,15 @@ export const projects = {
           "A personal image board with file reading, using traditional grid methods.",
         deployment: "https://bigolboyyo.github.io/ImageBoard/",
         repo: "https://github.com/bigolboyyo/Gridscroller",
+        status: "Deployed",
+      },
+      {
+        displayImg: publicImage("BB-display.png"),
+        title: "Screensaver",
+        description:
+          "Experimenting with Canvas and JS to create a simple screensaver.",
+        deployment: "https://bigolboyyo.github.io/BouncingBalls/",
+        repo: "https://github.com/bigolboyyo/BouncingBalls",
         status: "Deployed",
       },
     ],
