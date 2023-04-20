@@ -1,7 +1,7 @@
 export function getPageName(pathname) {
   switch (pathname) {
-    case "/about":
-      return "About";
+    case "/skills":
+      return "Skills";
     case "/work":
       return "Work";
     case "/contact":

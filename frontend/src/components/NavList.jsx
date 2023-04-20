@@ -30,7 +30,7 @@ export default function NavList({ toggleDrawer }) {
           gap: "1rem",
         }}
       >
-        {["Home", "About", "Work", "Contact"].map((text) => (
+        {["Home", "Skills", "Work", "Contact"].map((text) => (
           <Button
             key={text}
             component={Link}

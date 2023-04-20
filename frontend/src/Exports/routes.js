@@ -1,5 +1,5 @@
 import Home from "../Pages/Home";
-import About from "../Pages/About";
+import Skills from "../Pages/Skills";
 import Work from "../Pages/Work";
 import Contact from "../Pages/Contact";
 import HeaderLayout from "../components/HeaderLayout";
@@ -13,8 +13,8 @@ const routes = [
         element: <Home />,
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/skills",
+        element: <Skills />,
       },
       {
         path: "/work",

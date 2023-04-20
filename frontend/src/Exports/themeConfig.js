@@ -61,11 +61,11 @@ const customComponents = {
         letterSpacing: "2px",
         WebkitTextStroke: "2px #000",
         fontFamily: "Freckle Face",
-        fontSize: "clamp(1.8rem, 3.7vmax, 4.2rem)",
+        fontSize: "clamp(2.5rem, 3.7vmax, 4.2rem)",
       },
       p: {
         color: "#EBB9EA",
-        fontSize: "clamp(1.8rem, 2.7vmax, 4rem)",
+        fontSize: "clamp(2rem, 2.7vmax, 4rem)",
         WebkitTextStroke: "2px #000",
         fontFamily: "Freckle Face",
         textShadow: "2px 4px black",

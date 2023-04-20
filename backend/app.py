@@ -1,17 +1,9 @@
-# Tools
 import os
 import time
 from dotenv import load_dotenv
 import pdb
-
-# Flask
 from flask import Flask, request, jsonify, redirect, session
 from flask_cors import CORS, cross_origin
-# from flask_wtf import FlaskForm
-# from wtforms import StringField, TextAreaField
-# from wtforms.validators import InputRequired, Email, Length
-
-# SendGrid
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
@@ -25,13 +17,6 @@ CORS(app)
 
 app.debug = True
 
-# class ContactForm(FlaskForm):
-#     name = StringField('Name', validators=[InputRequired(), Length(min=2, max=128)])
-#     email = StringField('Email', validators=[InputRequired(), Email()])
-#     message = TextAreaField('Message', validators=[InputRequired(), Length(min=6, max=1000)])
-
-
-# Define the route for the contact form
 @app.route('/contact', methods=['POST', 'OPTIONS'])
 @cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def contact():
@@ -56,8 +41,8 @@ def contact():
             )
         
         try:
-            # sg = SendGridAPIClient(SENDGRID_API_KEY)
-            # response = sg.send(composed_email)
+            sg = SendGridAPIClient(SENDGRID_API_KEY)
+            response = sg.send(composed_email)
             time.sleep(3)
             return jsonify({'message': 'Email sent successfully.'}), 200
         except Exception as e:
