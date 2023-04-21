@@ -39,7 +39,7 @@ def contact():
         
         try:
             sg = SendGridAPIClient(SENDGRID_API_KEY)
-            response = sg.send(composed_email)
+            sg.send(composed_email)
             time.sleep(3)
             return jsonify({'message': 'Email sent successfully.'}), 200
         except Exception as e:
