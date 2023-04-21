@@ -1,5 +1,7 @@
 # Backend - Wesley Grant's Personal Portfolio Site
 
+<img src="../frontend/public/images/ufo.png" alt="PC Image" width="300" height="250">
+
 This is the backend part of my personal portfolio site, built using Flask and the SendGrid API. The backend features a contact endpoint that sends an email to wesgrant.dev@gmail.com upon form submission.
 
 ## Features
