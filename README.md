@@ -4,8 +4,8 @@ Welcome to the repository for my personal portfolio site! You can check out the 
 
 This portfolio site showcases my skills, projects, and experience as a developer. It's built using the following tech stack:
 
-- **Frontend**: React, Material-UI, and GSAP
-- **Backend**: Flask and SendGrid
+- **[Frontend](https://github.com/bigolboyyo/PersonalPortfolio/tree/main/frontend)**: React, Material-UI, and GSAP
+- **[Backend](https://github.com/bigolboyyo/PersonalPortfolio/tree/main/backend)**: Flask and SendGrid
 
 The site is deployed using Netlify for the frontend and PythonAnywhere for the backend.
 
