@@ -1,8 +1,7 @@
 import os
 import time
 from dotenv import load_dotenv
-import pdb
-from flask import Flask, request, jsonify, redirect, session
+from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
@@ -14,8 +13,6 @@ EMAIL_CONFIG = os.getenv("EMAIL_CONFIG")
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY")
 CORS(app)
-
-app.debug = True
 
 @app.route('/contact', methods=['POST', 'OPTIONS'])
 @cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
