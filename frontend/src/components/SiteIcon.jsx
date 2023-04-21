@@ -10,6 +10,13 @@ function SiteIcon({ message, setMessage }) {
   const iconRef = useRef(null);
   const [open, setOpen] = useState(false);
 
+  let secrets;
+  try {
+    secrets = secretMessages;
+  } catch (e) {
+    secrets = process.env.REACT_APP_SECRET_MESSAGES;
+  }
+
   useEffect(() => {
     const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
@@ -21,8 +28,7 @@ function SiteIcon({ message, setMessage }) {
   }, []);
 
   const handleClick = () => {
-    const randomMessage =
-      secretMessages[Math.floor(Math.random() * secretMessages.length)];
+    const randomMessage = secrets[Math.floor(Math.random() * secrets.length)];
     setMessage(randomMessage);
     setOpen(true);
   };
