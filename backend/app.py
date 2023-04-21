@@ -10,7 +10,7 @@ load_dotenv()
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 EMAIL_CONFIG = os.getenv("EMAIL_CONFIG")
 
-app = Flask(__name__)
+app = Flask("email_collection")
 app.secret_key = os.getenv("SECRET_KEY")
 CORS(app)
 
