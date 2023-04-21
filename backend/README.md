@@ -8,6 +8,7 @@ This is the backend part of my personal portfolio site, built using Flask and th
 - SendGrid API integration for email sending
 - Error handling and response management
 - Environment variable configuration for security and flexibility
+- PythonAnywhere deployment
 
 ## Getting Started
 
