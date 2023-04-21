@@ -28,7 +28,7 @@ function Root() {
         setTimeout(() => {
           if (isMounted) {
             setLoaded(true);
-            // localStorage.setItem("loadTimestamp", Date.now());
+            localStorage.setItem("loadTimestamp", Date.now());
           }
         }, 3000);
       } else {
