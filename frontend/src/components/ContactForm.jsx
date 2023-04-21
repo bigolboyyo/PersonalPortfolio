@@ -37,19 +37,22 @@ export default function ContactForm() {
       return;
     }
     setIsLoading(true);
-    const response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-      }),
-    });
+    const response = await fetch(
+      "https://bigboyyo.pythonanywhere.com/contact",
+      {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      }
+    );
     const data = await response.json();
 
     responseHandler(response, setSeverity, setResponseMsg, data);
