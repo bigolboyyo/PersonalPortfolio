@@ -3,18 +3,18 @@ import publicImage from "../exports/publicImage";
 import { Avatar } from "@mui/material";
 import gsap from "gsap";
 import { Dialog, DialogContent } from "@mui/material";
-import { secretMessages } from "../exports/secretMessages";
+// import { secretMessages } from "../exports/secretMessages";
 import { mainIconSpinner } from "../animations/mainIconSpinner";
 
 function SiteIcon({ message, setMessage }) {
   const iconRef = useRef(null);
   const [open, setOpen] = useState(false);
 
-  let secrets;
+  let secretMessages = [];
   try {
-    secrets = secretMessages;
+    secretMessages = require("../exports/secretMessages").secretMessages;
   } catch (e) {
-    secrets = process.env.REACT_APP_SECRET_MESSAGES;
+    secretMessages = process.env.REACT_APP_SECRET_MESSAGES.split(",");
   }
 
   useEffect(() => {
@@ -28,7 +28,8 @@ function SiteIcon({ message, setMessage }) {
   }, []);
 
   const handleClick = () => {
-    const randomMessage = secrets[Math.floor(Math.random() * secrets.length)];
+    const randomMessage =
+      secretMessages[Math.floor(Math.random() * secretMessages.length)];
     setMessage(randomMessage);
     setOpen(true);
   };
