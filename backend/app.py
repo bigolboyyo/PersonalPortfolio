@@ -1,7 +1,5 @@
 from flask import Flask, request
 
-# IF IT WORKS THIS WILL APPEAR ON PYTHON ANYWHERE!!
-
 app = Flask(__name__)
 
 @app.route('/contact', methods=['GET', 'POST'])
@@ -10,8 +8,6 @@ def contact():
         name = request.form['name']
         email = request.form['email']
         message = request.form['message']
-        # Insert your email handling code here
-        # ...
         return 'Thank you for contacting me!'
     else:
         return 'This is the contact page. Use a POST request to submit a message.'
