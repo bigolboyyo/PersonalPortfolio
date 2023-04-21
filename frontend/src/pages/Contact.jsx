@@ -16,7 +16,7 @@ const Contact = () => {
       disableGutters={true}
       maxWidth="false"
       sx={{
-        height: "calc(100vh + 64px)",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",

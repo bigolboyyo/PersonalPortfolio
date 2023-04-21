@@ -28,7 +28,7 @@ function Root() {
         setTimeout(() => {
           if (isMounted) {
             setLoaded(true);
-            localStorage.setItem("loadTimestamp", Date.now());
+            // localStorage.setItem("loadTimestamp", Date.now());
           }
         }, 3000);
       } else {
@@ -54,7 +54,7 @@ function Root() {
           </ThemeProvider>
         </React.StrictMode>
       ) : (
-        <Loading loading={!loaded} />
+        <Loading width="128px" loading={!loaded} />
       )}
     </>
   );

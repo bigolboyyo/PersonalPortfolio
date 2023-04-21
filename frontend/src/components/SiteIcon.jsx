@@ -35,7 +35,7 @@ function SiteIcon({ message, setMessage }) {
     <>
       <Avatar
         onClick={handleClick}
-        src={publicImage("pp-icon.png")}
+        src={publicImage("pc_markdown.png")}
         alt="main-icon"
         sx={{
           width: 33,
