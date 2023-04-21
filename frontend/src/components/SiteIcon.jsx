@@ -3,15 +3,8 @@ import publicImage from "../exports/publicImage";
 import { Avatar } from "@mui/material";
 import gsap from "gsap";
 import { Dialog, DialogContent } from "@mui/material";
-// import { secretMessages } from "../exports/secretMessages";
+import { secretMessages } from "../exports/secretMessages";
 import { mainIconSpinner } from "../animations/mainIconSpinner";
-
-let secretMessages = [];
-try {
-  secretMessages = require("../exports/secretMessages").secretMessages;
-} catch (e) {
-  secretMessages = process.env.REACT_APP_SECRET_MESSAGES.split(",");
-}
 
 function SiteIcon({ message, setMessage }) {
   const iconRef = useRef(null);
