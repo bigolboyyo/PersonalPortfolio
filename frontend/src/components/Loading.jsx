@@ -1,29 +1,35 @@
 import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
 import publicImage from "../exports/publicImage";
-const LoadingIcon = publicImage("icon-loading.png");
+import { loadingAnimation } from "../animations/loadingAnimation";
+const pcIcon = publicImage("pc.png");
 
 const Loading = ({ loading, width = "64px" }) => {
   const loadingRef = useRef(null);
 
   useEffect(() => {
     if (loading) {
-      const tl = gsap.timeline({ repeat: -1 });
-      tl.to(loadingRef.current, {
-        rotate: 360,
-        duration: 1.5,
-        ease: "none",
-      });
+      loadingAnimation(loadingRef.current);
     }
   }, [loading]);
 
   return loading ? (
-    <img
-      ref={loadingRef}
-      alt="loading icon"
-      src={LoadingIcon}
-      style={{ width: width, objectFit: "contain" }}
-    />
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <img
+        ref={loadingRef}
+        alt="loading icon"
+        src={pcIcon}
+        style={{ width: width, objectFit: "contain" }}
+      />
+    </div>
   ) : null;
 };
 

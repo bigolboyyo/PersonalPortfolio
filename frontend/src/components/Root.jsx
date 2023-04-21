@@ -1,15 +1,11 @@
 import "@fontsource/rubik-bubbles";
 import "@fontsource/freckle-face";
-
 import App from "../App";
 import React, { useEffect, useState } from "react";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import routes from "../exports/routes";
-
 import { ThemeProvider } from "@emotion/react";
 import { mainTheme } from "../exports/themeConfig";
-
 import Loading from "../components/Loading";
 
 function Root() {
@@ -23,25 +19,27 @@ function Root() {
       setLoaded(true);
       return;
     }
-
-    const timerId = setTimeout(() => {
-      setLoaded(true);
-      localStorage.setItem("loadTimestamp", Date.now());
-    }, 10000);
-
-    const loadHandler = () => {
-      clearTimeout(timerId);
-      setLoaded(true);
-      localStorage.setItem("loadTimestamp", Date.now());
+    let isMounted = true;
+    const checkLoaded = () => {
+      if (
+        document.readyState === "complete" ||
+        document.readyState === "interactive"
+      ) {
+        setTimeout(() => {
+          if (isMounted) {
+            setLoaded(true);
+            localStorage.setItem("loadTimestamp", Date.now());
+          }
+        }, 3000);
+      } else {
+        window.requestAnimationFrame(checkLoaded);
+      }
     };
 
-    window.addEventListener("load", loadHandler);
-    window.addEventListener("DOMContentLoaded", loadHandler);
+    checkLoaded();
 
     return () => {
-      window.removeEventListener("load", loadHandler);
-      window.removeEventListener("DOMContentLoaded", loadHandler);
-      clearTimeout(timerId);
+      isMounted = false;
     };
   }, []);
 
