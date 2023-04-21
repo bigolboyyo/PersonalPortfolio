@@ -1,5 +1,7 @@
 # Wesley Grant's Personal Portfolio Site
 
+<img src="./frontend/public/images/pc.png" alt="PC Image" width="300" height="300">
+
 Welcome to the repository for my personal portfolio site! You can check out the live version at [wesleygrant.netlify.app](https://wesleygrant.netlify.app/).
 
 This portfolio site showcases my skills, projects, and experience as a developer. It's built using the following tech stack:
