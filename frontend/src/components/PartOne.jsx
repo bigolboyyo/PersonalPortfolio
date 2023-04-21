@@ -3,7 +3,7 @@ import { Card, CardContent, Typography } from "@mui/material";
 import SpeechBubble from "./SpeechBubble";
 import Canvas from "./Canvas";
 import Code from "./Code";
-import { getCanvasString } from "../Exports/getCanvasString";
+import { getCanvasString } from "../exports/getCanvasString";
 
 import RevealButton from "./RevealButton";
 

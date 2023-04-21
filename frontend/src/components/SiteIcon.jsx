@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import publicImage from "../Exports/publicImage";
+import publicImage from "../exports/publicImage";
 import { Avatar } from "@mui/material";
 import gsap from "gsap";
 import { Dialog, DialogContent } from "@mui/material";
-import { secretMessages } from "../Exports/secretMessages";
+import { secretMessages } from "../exports/secretMessages";
 import { mainIconSpinner } from "../animations/mainIconSpinner";
 
 function SiteIcon({ message, setMessage }) {
@@ -16,7 +16,6 @@ function SiteIcon({ message, setMessage }) {
     mainIconSpinner(tl, iconRef.current);
 
     return () => {
-      // Clean up the animation on component unmount
       tl.kill();
     };
   }, []);

@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Box } from "@mui/material";
 import MainCard from "./MainCard.jsx";
 import SmallCard from "./SmallCard.jsx";
-import { projects } from "../Exports/projects.js";
+import { projects } from "../exports/projects.js";
 
 function WorkGrid() {
   return (

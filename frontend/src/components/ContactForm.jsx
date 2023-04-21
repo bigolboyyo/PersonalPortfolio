@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { animateBubbles } from "../animations/animateBubbles";
-import { responseHandler } from "../Exports/responseHandler";
+import { responseHandler } from "../exports/responseHandler";
 import Notifications from "./Notifications";
 import Loading from "./Loading";
 
@@ -53,12 +53,11 @@ export default function ContactForm() {
         }),
       }
     );
-    const data = await response.json();
 
+    const data = await response.json();
     responseHandler(response, setSeverity, setResponseMsg, data);
 
     setIsLoading(false);
-
     setOpen(true);
     setName("");
     setEmail("");

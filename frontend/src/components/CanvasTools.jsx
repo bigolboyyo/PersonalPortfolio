@@ -8,14 +8,7 @@ import {
   Divider,
 } from "@mui/material";
 
-function CanvasTools({
-  setVx,
-  setVy,
-  setRotationSpeed,
-  image,
-  setImage,
-  setToolbarHeight,
-}) {
+function CanvasTools({ setVx, setVy, setRotationSpeed, image, setImage }) {
   const toolbarRef = useRef(null);
 
   return (

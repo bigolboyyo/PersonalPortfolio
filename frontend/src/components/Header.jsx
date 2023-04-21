@@ -3,19 +3,19 @@ import { AppBar, Toolbar, IconButton, Typography, Drawer } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
 import { useLocation } from "react-router-dom";
-import { getPageName } from "../Exports/getPageName";
+import { getPageName } from "../exports/getPageName";
 import SiteIcon from "./SiteIcon";
 import NavList from "./NavList";
 
 export default function Header() {
-  const headerRef = useRef(null);
-  const location = useLocation();
-
-  const routeName = location.pathname;
-  const pageName = getPageName(routeName);
-
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [message, setMessage] = useState("");
+
+  const headerRef = useRef(null);
+
+  const location = useLocation();
+  const routeName = location.pathname;
+  const pageName = getPageName(routeName);
 
   useEffect(() => {
     animateRouteSwitch(null, headerRef.current);

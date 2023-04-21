@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import publicImage from "../Exports/publicImage";
-import { addClickEventListener } from "../Exports/addClickEventListener";
+import publicImage from "../exports/publicImage";
+import { addClickEventListener } from "../exports/addClickEventListener";
 
 const stars = publicImage("Stars.png");
 const dots = publicImage("Dots.png");
@@ -27,8 +27,6 @@ function CircleAnimation({ circleRef }) {
         borderRadius: "50%",
         transform: "translate(-50%, -50%) scale(0)",
         pointerEvents: "none",
-        // top/left added for empty container pages
-        // remember you may have to remove this when containers aren't empty anymore
         top: 0,
         left: 0,
         backgroundImage: `url(${starOrDot ? stars : dots})`,

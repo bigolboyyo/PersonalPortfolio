@@ -16,7 +16,6 @@ const GithubLink = ({ name, href }) => {
         width: "auto",
         paddingBottom: "1rem",
         paddingTop: "1rem",
-        // backgroundColor: "black",
         borderRadius: "25%",
         border: "solid transparent",
         backgroundClip: "padding-box",

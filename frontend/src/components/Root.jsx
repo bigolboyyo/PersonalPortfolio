@@ -5,16 +5,15 @@ import App from "../App";
 import React, { useEffect, useState } from "react";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import routes from "../Exports/routes";
+import routes from "../exports/routes";
 
 import { ThemeProvider } from "@emotion/react";
-import { mainTheme } from "../Exports/themeConfig";
+import { mainTheme } from "../exports/themeConfig";
 
 import Loading from "../components/Loading";
 
 function Root() {
   const router = createBrowserRouter(routes);
-
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {

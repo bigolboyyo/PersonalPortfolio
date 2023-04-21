@@ -1,5 +1,5 @@
 import React, { useEffect, forwardRef } from "react";
-import publicImage from "../Exports/publicImage";
+import publicImage from "../exports/publicImage";
 import CanvasTools from "./CanvasTools";
 import { animateImage } from "../animations/animateImage";
 

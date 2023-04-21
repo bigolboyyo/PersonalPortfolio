@@ -19,8 +19,6 @@ const AboutMe = forwardRef((props, ref) => {
       ref={ref}
       sx={{
         height: "90vh",
-        // scrollSnapAlign: "start",
-        // scrollSnapStop: "always",
       }}
     >
       <ThreeDBox

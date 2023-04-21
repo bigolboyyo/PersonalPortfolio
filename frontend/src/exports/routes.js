@@ -1,7 +1,7 @@
-import Home from "../Pages/Home";
-import Skills from "../Pages/Skills";
-import Work from "../Pages/Work";
-import Contact from "../Pages/Contact";
+import Home from "../pages/Home";
+import Skills from "../pages/Skills";
+import Work from "../pages/Work";
+import Contact from "../pages/Contact";
 import HeaderLayout from "../components/HeaderLayout";
 
 const routes = [

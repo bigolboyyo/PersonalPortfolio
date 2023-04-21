@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Container, Grid, Box, Tooltip } from "@mui/material";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
-import { iconConfig } from "../Exports/iconConfig";
+import { iconConfig } from "../exports/iconConfig";
 import { animateBubbles } from "../animations/animateBubbles";
 
 const Skills = () => {
   const [gridHeight, setGridHeight] = useState("");
-
   const aboutRef = useRef(null);
   const gridRef = useRef(null);
   const filterRef = useRef(null);
@@ -14,7 +13,6 @@ const Skills = () => {
   useEffect(() => {
     setGridHeight(gridRef.current?.offsetHeight);
     aboutRef.current.style.height = `${gridHeight}px`;
-
     // eslint-disable-next-line
   }, []);
 

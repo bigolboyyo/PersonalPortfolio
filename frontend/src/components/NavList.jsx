@@ -2,7 +2,7 @@ import React from "react";
 import { List, ListItemText, Button, Box, Divider } from "@mui/material";
 import { Link } from "react-router-dom";
 import { animateRouteSwitch } from "../animations/animateRouteSwitch";
-import { socialLinks } from "../Exports/socials";
+import { socialLinks } from "../exports/socials";
 
 export default function NavList({ toggleDrawer }) {
   const handleRouteClick = async (text, ref) => {

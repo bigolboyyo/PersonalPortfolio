@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 
 import { Box, Typography } from "@mui/material";
 import { animateBubbles } from "../animations/animateBubbles";
-import { getTriangleStyles } from "../Exports/getTriangleStyles";
+import { getTriangleStyles } from "../exports/getTriangleStyles";
 
 const SpeechBubble = ({
   text,
@@ -24,7 +24,6 @@ const SpeechBubble = ({
         position: "relative",
         textAlign: "center",
         backgroundColor: "#F5FEFD",
-        // border: "solid #40AAFE 4px",
         borderRadius: "20px",
         padding: "0.45rem",
         minWidth: minWidth,
@@ -37,7 +36,6 @@ const SpeechBubble = ({
           content: '""',
           zIndex: 10,
           ...getTriangleStyles(trianglePosition),
-          //   backgroundColor: "#40AAFE",
         },
       }}
     >

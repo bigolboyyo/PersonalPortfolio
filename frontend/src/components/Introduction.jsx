@@ -4,7 +4,7 @@ import React, { useEffect, forwardRef } from "react";
 import SpinningAvatar from "./SpinningAvatar";
 import { animateBubbles } from "../animations/animateBubbles";
 import SpeechBubble from "./SpeechBubble";
-import publicImage from "../Exports/publicImage";
+import publicImage from "../exports/publicImage";
 
 const selfie = publicImage("self.jpeg");
 
@@ -25,8 +25,6 @@ const Introduction = forwardRef((props, ref) => {
         backgroundColor: "transparent",
         padding: "1rem",
         height: "100vh",
-        // scrollSnapAlign: "start",
-        // scrollSnapStop: "always",
       }}
     >
       <CardContent
