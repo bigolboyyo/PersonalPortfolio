@@ -1,6 +1,8 @@
 # Frontend - Wesley Grant's Personal Portfolio Site
 
-<img src="../frontend/public/images/casette.png" alt="Casette" width="300" height="200">
+<div style="background-color: black; width: 300px;">
+<img src="../frontend/public/images/casette.png" alt="Casette" width="300" height="200" >
+</div>
 
 This is the frontend part of my personal portfolio site, built using React, Material-UI, and GSAP for animations. The site follows a "90s space" theme and features a responsive design with custom style overrides.
 

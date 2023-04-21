@@ -1,6 +1,8 @@
 # Wesley Grant's Personal Portfolio Site
 
+<div style="background-color: black; width: 300px;">
 <img src="./frontend/public/images/pc.png" alt="PC Image" width="300" height="300">
+</div>
 
 Welcome to the repository for my personal portfolio site! You can check out the live version at [wesleygrant.netlify.app](https://wesleygrant.netlify.app/).
 
